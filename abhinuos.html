@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>IndianCoder3 | AbhinuOS</title>
+
+    <meta name="description"
+          content="AbhinuOS is an educational operating system project by Abhinu Gupta, exploring Linux-based distros and custom C kernels using Limine." />
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+<div id="loading-bar"></div>
+
+<!-- ================= NAVIGATION ================= -->
+<nav>
+    <div class="logo">
+        <img src="images/logo.png" width="50" height="50" alt="IndianCoder3 Logo" />
+    </div>
+
+    <div class="nav-right">
+        <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="abhinuos.html" class="active">AbhinuOS</a></li>
+            <li><a href="events.html">Celebrations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<button id="backToTop" title="Back to top">↑</button>
+
+<!-- ================= HERO ================= -->
+<section class="hero2">
+    <h1>AbhinuOS</h1>
+    <p>
+        A personal operating system project focused on
+        <br />
+        learning, experimentation, and low-level system development.
+    </p>
+</section>
+
+<!-- ================= INTRO ================= -->
+<img src="images/AbhinuOS2.png" alt="AbhinuOS" class="center-img">
+
+<section class="projects2">
+    <h2 class="reveal" style="text-align:center;">🧠 What is AbhinuOS?</h2>
+    <p class="reveal delay" style="max-width: 900px; margin: auto;">
+        <strong>AbhinuOS</strong> is a learning-focused operating system project
+        exploring how operating systems work — from Linux customization
+        to bare-metal kernel development in C.
+        <br /><br />
+        This project is not meant to replace existing operating systems.
+        It exists to understand how they are built at a fundamental level.
+    </p>
+
+    <!-- ================= EDITIONS ================= -->
+    <h2 class="reveal" style="text-align:center; margin-top:50px;">
+        📦 AbhinuOS Editions
+    </h2>
+
+    <div class="project-cards">
+
+        <article class="card">
+            <h3>🐧 AbhinuOS (Linux-based)</h3>
+            <hr>
+            <p>
+                • Built using <strong>Cubic</strong><br>
+                • Based on <strong>Kubuntu 25.10</strong><br>
+                • Uses GRUB bootloader<br>
+                • Customized live ISO & installer
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>⚙️ AbhinuOS (Custom / Limine)</h3>
+            <hr>
+            <p>
+                • Fully custom OS written in C<br>
+                • Uses Limine bootloader<br>
+                • ELF kernel (no Linux involved)<br>
+                • Bare-metal experimentation
+            </p>
+        </article>
+
+    </div>
+
+    <!-- ================= GOALS ================= -->
+    <h2 class="reveal" style="text-align:center; margin-top:50px;">
+        🎯 Project Goals
+    </h2>
+
+    <div class="project-cards">
+
+        <article class="card">
+            <p>
+                • Understand BIOS & UEFI boot process<br>
+                • Learn kernel development in C<br>
+                • Explore memory maps & hardware bring-up<br>
+                • Build real bootable systems
+            </p>
+        </article>
+
+        <article class="card">
+            <p>
+                • ISO creation & filesystem layouts<br>
+                • Linux initramfs & kernel boot flow<br>
+                • Bootloaders: GRUB & Limine<br>
+                • QEMU-based testing
+            </p>
+        </article>
+
+    </div>
+
+    <!-- ================= TOOLS ================= -->
+    <h2 class="reveal" style="text-align:center; margin-top:50px;">
+        🛠 Tools & Testing
+    </h2>
+
+    <div class="project-cards">
+
+        <article class="card">
+            <p>
+                • xorriso (ISO generation)<br>
+                • GCC / Clang cross-compilers<br>
+                • Limine utilities<br>
+                • QEMU (BIOS & UEFI)
+            </p>
+        </article>
+
+        <article class="card">
+            <p>
+                ⚠️ Experimental project<br>
+                Features may be broken or incomplete<br>
+                This is intentional and part of learning
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+<h2 class="reveal" style="text-align:center; margin-top:50px;">
+    🧱 How the Linux Edition is Built
+</h2><br>
+
+<div class="project-cards">
+
+    <article class="card">
+        <p>
+            • Base ISO: Kubuntu 25.10<br>
+            • Tool: Cubic (Custom Ubuntu ISO Creator)<br>
+            • Modified filesystem & packages<br>
+            • Custom branding & configuration
+        </p>
+    </article>
+
+    <article class="card">
+        <p>
+            Focus areas:<br>
+            • Live environment behavior<br>
+            • GRUB menu & boot parameters<br>
+            • Package selection & cleanup<br>
+            • ISO rebuilding & testing
+        </p>
+    </article>
+
+</div>
+<br><br><br>
+
+<!-- ================= FOOTER ================= -->
+<footer class="reveal">
+    <p>
+        © 2025–2026 Abhinu Gupta |
+        <a href="https://github.com/IndianCoder3" target="_blank">GitHub</a> |
+        <a href="https://indiancoder3.netlify.app" target="_blank">Portfolio</a>
+    </p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

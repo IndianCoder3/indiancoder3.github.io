@@ -1,0 +1,590 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ================= CENTER ALIGN IMAGES =================*/
+.center-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* Optional: Set a width to prevent the image from taking the full width of the page */
+  width: 50%;
+}
+
+/* ================= BUTTONS ================= */
+.btn,
+.btnh {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #f5c518;
+  color: #1a1a2e;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.btn:hover,
+.btnh:hover {
+  background-color: #e0a800;
+}
+
+/* ================= NAVIGATION ================= */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #1a1a2e;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Right side group */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline;
+  margin-left: 20px;
+}
+
+/* ================= NAV LINK UNDERLINE ANIMATION ================= */
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+}
+
+/* underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: #f5c518;
+  transition: width 0.3s ease;
+}
+
+/* on hover */
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ================= NAV ACTIVE PAGE INDICATOR ================= */
+
+.nav-links a.active {
+  color: #f5c518;
+}
+
+/* keep underline visible on active page */
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* ================= HERO ================= */
+.hero {
+  height: 90vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #2980b9, #6dd5fa);
+  color: white;
+  text-align: center;
+}
+
+.hero p {
+  white-space: pre-line;
+}
+
+/* ================= HERO 2 ================= */
+.hero2 {
+  height: 55vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #82b929, #6dfa84);
+  color: white;
+  text-align: center;
+}
+
+/* ================= SECTIONS ================= */
+.projects {
+  padding: 50px;
+  text-align: center;
+}
+
+.projects2 {
+  padding: 50px;
+  text-align: left;
+}
+
+.projects h2,
+.projects2 h2 {
+  font-size: 2.2em;
+  margin-bottom: 15px;
+}
+
+.projects p {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* ================= PROJECT CARDS ================= */
+.project-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  width: 250px;
+}
+
+/* Safe hover effect (no animations) */
+.card:hover {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card h3 {
+  margin: 12px 0;
+}
+
+.card p {
+  font-size: 0.95em;
+  color: #333;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #2980b9;
+  font-weight: bold;
+}
+
+.card a:hover {
+  color: #1a1a2e;
+}
+
+/* ================= CONTACT ================= */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  padding: 2em 1em;
+}
+
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  max-width: 900px;
+  justify-content: center;
+}
+
+.contact-cards .card {
+  background: #2c3e50;
+  color: #ecf0f1;
+  width: 280px;
+}
+
+.contact-cards .card p {
+  color: #ecf0f1;
+}
+
+.contact-cards .card a {
+  color: #1abc9c;
+  font-weight: bold;
+}
+
+.contact-cards .card a:hover {
+  text-decoration: underline;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a2e;
+  color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 650px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-cards {
+    flex-direction: column;
+  }
+}
+
+/* ================= PAGE TRANSITION ================= */
+
+body {
+  opacity: 1;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* when leaving page */
+body.page-exit {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* optional: when page loads */
+body.page-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* ================= SAFE HERO ANIMATIONS ================= */
+
+/* Keyframe */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero base – content ALWAYS visible */
+.hero h1,
+.hero p,
+.hero .btn,
+.hero2 h1,
+.hero2 p,
+.hero2 .btn {
+  opacity: 1; /* IMPORTANT: never hidden */
+}
+
+/* Animate on page load */
+.hero h1 {
+  animation: heroFadeUp 0.8s ease both;
+}
+
+.hero p {
+  animation: heroFadeUp 0.8s ease both;
+  animation-delay: 0.2s;
+}
+
+.hero .btn {
+  animation: heroFadeUp 0.8s ease both;
+  animation-delay: 0.4s;
+}
+
+/* Hero 2 (About / Projects / etc) */
+.hero2 h1 {
+  animation: heroFadeUp 0.8s ease both;
+}
+
+.hero2 p {
+  animation: heroFadeUp 0.8s ease both;
+  animation-delay: 0.2s;
+}
+
+.hero2 .btn {
+  animation: heroFadeUp 0.8s ease both;
+  animation-delay: 0.4s;
+}
+
+/* ================= CARD SCROLL ANIMATION ================= */
+
+/* Default state: cards visible but ready to animate */
+.card {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease,
+          opacity 0.6s ease;
+}
+
+/* Scroll-hidden state (added by JS) */
+.card.card-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Scroll-shown state */
+.card.card-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover rise (works everywhere) */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* ================= HEADING + TEXT SCROLL ANIMATION ================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* Slight delay for paragraphs */
+.reveal.delay {
+  transition-delay: 0.15s;
+}
+
+/* ================= LOADING BAR ================= */
+
+#loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(90deg, #f5c518, #ffdd57);
+  z-index: 9999;
+  transition: width 0.3s ease, opacity 0.4s ease;
+}
+
+/* ================= BACK TO TOP ================= */
+
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background-color: #1a1a2e;
+  color: #f5c518;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s;
+  z-index: 999;
+}
+
+#backToTop:hover {
+  transform: translateY(-6px);
+  background-color: #111;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================= DARK MODE ================= */
+/* Activate by adding class="dark" to <body> */
+
+body.dark {
+  background-color: #0f1220;
+  color: #eaeaf0;
+}
+
+#darkToggle {
+  margin-right: 20px;
+  background: transparent;
+  border: 2px solid #f5c518;
+  color: #f5c518;
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#darkToggle:hover {
+  background-color: #f5c518;
+  color: #1a1a2e;
+}
+
+/* ================= NAV ================= */
+
+body.dark nav {
+  background-color: #0c0f1a;
+}
+
+body.dark .nav-links a {
+  color: #eaeaf0;
+}
+
+body.dark .nav-links a::after {
+  background-color: #f5c518;
+}
+
+body.dark .nav-links a.active {
+  color: #f5c518;
+}
+
+/* ================= HERO ================= */
+
+body.dark .hero {
+  background: linear-gradient(120deg, #1b2a4e, #243b6b);
+}
+
+body.dark .hero2 {
+  background: linear-gradient(120deg, #1e3b1e, #2d6a2d);
+}
+
+/* ================= SECTIONS ================= */
+
+body.dark .projects,
+body.dark .projects2 {
+  background-color: #0f1220;
+}
+
+body.dark .projects p {
+  color: #cfcfe6;
+}
+
+/* ================= CARDS ================= */
+
+body.dark .card {
+  background-color: #1a1d2e;
+  color: #eaeaf0;
+}
+
+body.dark .card p {
+  color: #cfcfe6;
+}
+
+body.dark .card a {
+  color: #7fb4ff;
+}
+
+body.dark .card a:hover {
+  color: #ffffff;
+}
+
+body.dark .card:hover {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+}
+
+/* ================= CONTACT ================= */
+
+body.dark .contact-info {
+  background-color: #0f1220;
+}
+
+body.dark .contact-cards .card {
+  background-color: #16192b;
+}
+
+body.dark .contact-cards .card a {
+  color: #5fe1c7;
+}
+
+/* ================= FOOTER ================= */
+
+body.dark footer {
+  background-color: #0c0f1a;
+  color: #cfcfe6;
+}
+
+/* ================= BUTTONS ================= */
+
+body.dark .btn,
+body.dark .btnh {
+  background-color: #f5c518;
+  color: #1a1a2e;
+}
+
+body.dark .btn:hover,
+body.dark .btnh:hover {
+  background-color: #ffdb4d;
+}
+
+/* ================= BACK TO TOP ================= */
+
+body.dark #backToTop {
+  background-color: #1a1d2e;
+  color: #f5c518;
+}
+
+body.dark #backToTop:hover {
+  background-color: #000;
+}
+
+/* ================= LOADING BAR ================= */
+
+body.dark #loading-bar {
+  background: linear-gradient(90deg, #f5c518, #ffdd57);
+}
+
+/* ================= THEME TOGGLE BUTTON ================= */
+
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #f5c518;
+  margin-left: 20px;
+  transition: transform 0.25s ease;
+}
+
+#themeToggle:hover {
+  transform: rotate(20deg) scale(1.1);
+}
+
+/* Dark mode icon tweak */
+body.dark #themeToggle {
+  color: #ffdd57;
+}
+
+/* ================= Typing Cursor for homepage ================= */
+
+#typing-para::after {
+  content: "|";
+  margin-left: 4px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
