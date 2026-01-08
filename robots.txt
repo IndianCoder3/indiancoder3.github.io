@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://indiancoder3.netlify.app/sitemap.xml
+Sitemap: https://indiancoder3.github.io/sitemap.xml
