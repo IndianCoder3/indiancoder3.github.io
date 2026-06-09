@@ -1,271 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ================= BASIC PAGE SETUP ================= -->
-
-  <!-- Character encoding: ensures text renders correctly -->
-  <meta charset="UTF-8" />
-
-  <!-- Responsive design: makes the site mobile-friendly -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-
-  <!-- ================= GOOGLE SEARCH CONSOLE ================= -->
-
-  <!-- Google site verification: proves ownership of this site -->
-  <!-- KEEP THIS or you will lose Search Console access -->
-  <meta name="google-site-verification"
-        content="UbCFuyQnLiGfHFSU_Z5NFExI5jrTz9EGxkf1ygz7sG4" />
-
-
-  <!-- ================= SEO (SEARCH ENGINE OPTIMIZATION) ================= -->
-
-  <!-- Primary SEO title shown in Google results -->
-  <title>Abhinu Gupta (IndianCoder3) — Developer Portfolio</title>
-
-  <!-- Meta description shown in Google results -->
-  <meta name="description"
-        content="Official portfolio of Abhinu Gupta (IndianCoder3), a young developer building real-world projects using Python, Streamlit, .NET, Scratch, and modern web technologies." />
-
-  <!-- Keywords: minor SEO value today, but harmless -->
-  <meta name="keywords"
-        content="IndianCoder3, Abhinu Gupta, Python developer, Streamlit apps, Scratch OS, web developer India" />
-
-  <!-- Author information -->
-  <meta name="author" content="Abhinu Gupta (IndianCoder3)" />
-
-
-  <!-- ================= CANONICAL URL ================= -->
-
-  <!-- Canonical URL: tells Google this is the MAIN version of the page -->
-  <!-- MUST point to GitHub Pages, NOT Netlify -->
-  <link rel="canonical" href="https://indiancoder3.github.io/" />
-
-
-  <!-- ================= OPEN GRAPH (SOCIAL PREVIEWS) ================= -->
-
-  <!-- Title shown when sharing on Discord, WhatsApp, etc. -->
-  <meta property="og:title"
-        content="Abhinu Gupta (IndianCoder3) — Developer Portfolio" />
-
-  <!-- Description shown in social previews -->
-  <meta property="og:description"
-        content="Explore projects by IndianCoder3, including Python apps, Streamlit tools, .NET projects, Scratch creations, and web development work." />
-
-  <!-- Defines the content type -->
-  <meta property="og:type" content="website" />
-
-  <!-- Canonical URL used by social platforms -->
-  <meta property="og:url"
-        content="https://indiancoder3.github.io/" />
-
-  <!-- Preview image for social shares -->
-  <!-- Must be an absolute URL -->
-  <meta property="og:image"
-        content="https://indiancoder3.github.io/images/logo.png" />
-
-
-  <!-- ================= TWITTER / X CARD ================= -->
-
-  <!-- Enables large preview image on Twitter/X -->
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- Twitter/X title -->
-  <meta name="twitter:title"
-        content="Abhinu Gupta (IndianCoder3) — Developer" />
-
-  <!-- Twitter/X description -->
-  <meta name="twitter:description"
-        content="Young developer building real-world apps with Python, Streamlit, .NET, Scratch, and web technologies." />
-
-
-  <!-- ================= STRUCTURED DATA (GOOGLE AI / RICH RESULTS) ================= -->
-
-  <!-- Schema.org JSON-LD: helps Google understand WHO you are -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Abhinu Gupta",
-      "alternateName": "IndianCoder3",
-      "url": "https://indiancoder3.github.io/",
-      "sameAs": [
-        "https://github.com/IndianCoder3",
-        "https://scratch.mit.edu/users/IndianCoder3/"
-      ],
-      "jobTitle": "Student Developer",
-      "knowsAbout": [
-        "Python",
-        "Streamlit",
-        ".NET",
-        "Web Development",
-        "Scratch Programming"
-      ]
-    }
-  </script>
-
-
-  <!-- ================= STYLES ================= -->
-
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="UbCFuyQnLiGfHFSU_Z5NFExI5jrTz9EGxkf1ygz7sG4" />
+    <title>Abhinu Gupta (IndianCoder3) — Developer Portfolio 2026</title>
+    <meta name="description" content="Portfolio of Abhinu Gupta (IndianCoder3), Class 6 Developer. Building projects with Python, HTML, Scratch, and ICTL Programming Language." />
+    <link rel="canonical" href="https://indiancoder3.github.io/" />
+    <meta property="og:title" content="Abhinu Gupta (IndianCoder3) — Developer Portfolio" />
+    <meta property="og:description" content="Explore projects by IndianCoder3 - Python, HTML, Scratch, and ICTL Language." />
+    <meta property="og:url" content="https://indiancoder3.github.io/" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0a0a0a; color: #e5e5e5; }
+        .dark-mode { background: #0a0a0a; }
+        .light-mode { background: #f5f5f5; color: #1a1a1a; }
+        .light-mode nav { background: rgba(255, 255, 255, 0.95); }
+        .light-mode .hero { background: #f0f0f0; }
+        .light-mode .card { background: #fff; border-color: #e0e0e0; }
+        .light-mode h1, .light-mode h2, .light-mode h3 { color: #d4af37; }
+        .light-mode p { color: #555; }
+        .gold-text { background: linear-gradient(135deg, #d4af37 0%, #fde047 50%, #d4af37 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
 </head>
-
-
-
 <body>
 
 <div id="loading-bar"></div>
 
-
 <!-- ================= NAVIGATION ================= -->
 <nav>
-  <div class="logo">
-    <img src="images/logo.png" width="50" height="50" alt="IndianCoder3 Logo" />
-  </div>
-  
-  <div class="nav-right">
-    <button id="themeToggle" aria-label="Toggle dark mode">
-      🌙
-    </button>
-
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="abhinuos.html">AbhinuOS</a></li>
-      <li><a href="events.html">Celebrations</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
+    <div class="logo">
+        <img src="images/logo.png" width="50" height="50" alt="IndianCoder3 Logo" />
+    </div>
+    <div class="nav-right">
+        <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="events.html">Milestones</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
 </nav>
 
 <button id="backToTop" title="Back to top">↑</button>
 
-
-<!-- ================= HERO ================= -->
+<!-- ================= HERO SECTION ================= -->
 <section class="hero">
-  <h1>Hi, I’m Abhinu Gupta <br />(IndianCoder3)</h1>
-  <p id="typing-para"></p>
-<br>
+    <h1>🚀 Abhinu Gupta (IndianCoder3)</h1>
+    <p>
+        Class 6 Developer | Python Enthusiast | Web Developer | ICTL Language Creator
+    </p>
+    <p class="typing-line">
+        <span class="typing-text" id="typingText"></span>
+    </p>
+    <div class="hero-buttons">
+        <a href="projects.html" class="btn btn-filled">View My Projects</a>
+        <a href="contact.html" class="btn">Get In Touch</a>
+    </div>
+</section>
 
-  <div>
-    <a href="projects.html" class="btn">View Projects</a>
-    <a href="about.html" class="btn">About Me</a>
-    <a href="events.html" class="btn">Celebrations</a>
-  </div>
+<!-- ================= QUICK STATS ================= -->
+<section>
+    <h2 class="reveal">📊 Quick Overview</h2>
+    <div class="cards-grid">
+        <div class="card">
+            <h3>🎯 About Me</h3>
+            <p>
+                Hi! I'm Abhinu Gupta, an 11-year-old developer from India passionate about creating useful applications and learning new technologies.
+                <br><br>
+                Currently in <strong>Class 6</strong> | Using <strong>VS Code</strong> | Windows 11 + WSL Ubuntu
+            </p>
+        </div>
+        <div class="card">
+            <h3>⚡ My Setup</h3>
+            <p>
+                <strong>OS:</strong> Windows 11 + WSL Ubuntu<br>
+                <strong>Editor:</strong> VS Code<br>
+                <strong>Browser:</strong> Firefox<br>
+                <strong>Download Tool:</strong> XDM & Gopeed<br>
+                <strong>Today:</strong> 26 April 2026
+            </p>
+        </div>
+        <div class="card">
+            <h3>🎨 Focus Areas</h3>
+            <p>
+                • Python Programming<br>
+                • Web Development (HTML/CSS/JS)<br>
+                • Scratch Game Development<br>
+                • ICTL Language Development<br>
+                • Streamlit Applications
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= SKILLS SECTION ================= -->
+<section>
+    <h2 class="reveal">💎 Skills & Proficiency</h2>
+    <div class="skills-section">
+        <div class="skills-grid">
+            <div class="skill-item">
+                <div class="skill-label">
+                    <span>Python</span>
+                    <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-label">
+                    <span>HTML & CSS</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-label">
+                    <span>JavaScript</span>
+                    <span>70%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 70%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-label">
+                    <span>Scratch</span>
+                    <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-label">
+                    <span>Streamlit</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 75%;"></div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-label">
+                    <span>ICTL Programming Language</span>
+                    <span>95%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 95%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- ================= FEATURED PROJECTS ================= -->
-<section class="projects">
-  <h2 class="reveal">🔥 Featured Projects</h2>
+<section>
+    <h2 class="reveal">🔥 Featured Projects</h2>
+    <div class="cards-grid">
+        <div class="card">
+            <h3>🌐 Abhinu.Dev Basic ICTL</h3>
+            <p>
+                A beginner-friendly programming language designed to make learning easy. Built on Python with clean, intuitive syntax. Includes web editor, VS Code extension, and comprehensive documentation.
+            </p>
+            <a href="https://github.com/indiancoder3/abhinu-dev_basic-ictl" target="_blank">🐙 GitHub</a>
+            <a href="https://indiancoder3.github.io/abhinu-dev_basic-ictl/editor" target="_blank">💻 Web Editor</a>
+        </div>
 
-  <p class="reveal delay">
-    Apps I’ve built, deployed, and actively maintain.
-    <br />
-  </p>
+        <div class="card">
+            <h3>💻 Abhinu WebCode Core IDE</h3>
+            <p>
+                A free, lightweight web-based IDE for developing HTML. Very basic and minimal, accessible from anywhere in the world. Perfect for quick prototyping.
+            </p>
+            <a href="https://indiancoder3.github.io/abhinu-ide/" target="_blank">🚀 Live Demo</a>
+            <a href="https://github.com/IndianCoder3/abhinu-ide" target="_blank">🐙 GitHub</a>
+        </div>
 
-  <hr />
-  <br>
-
-  <div class="project-cards">
-
-    <article class="card">
-      <img src="images/html/abhinucode.png" alt="AbhinuCode Core IDE">
-      <h3>Abhinu's WebCode Core IDE</h3>
-      <p>
-        The free IDE you need!
-      </p>
-      <a href="https://indiancoder3.github.io/abhinu-ide/" target="_blank">🚀 Live Demo</a><br />
-      <a href="https://github.com/IndianCoder3/abhinu-ide" target="_blank">🐙 GitHub</a>
-    </article>
-
-    <article class="card">
-      <img src="images/AbhinuOS.png" alt="AbhinuOS preview" />
-      <h3>AbhinuOS</h3>
-      <p>
-        A learning-focused operating system project.
-        Includes a Linux-based edition (Kubuntu 25.10, Cubic)
-        and a custom C kernel using Limine.
-      </p>
-      <a href="abhinuos.html">📄 Project Page</a><br />
-      <a href="https://github.com/IndianCoder3" target="_blank">🐧 GitHub</a>
-    </article>
-
-    <!-- Project 1 -->
-    <article class="card">
-      <img src="images/python/qrcode.png" alt="Streamlit QR Code Generator preview" />
-      <h3>Streamlit QR Code Generator</h3>
-      <p>
-        Generate QR codes from text or URLs, customize colors,
-        and download instantly. Cloud-ready.
-      </p>
-      <a href="https://qr-code-gen-ic3.streamlit.app/" target="_blank">🚀 Live Demo</a><br />
-      <a href="https://github.com/IndianCoder3/Str-QR-Code-Gen_ic3" target="_blank">🐙 GitHub</a>
-    </article>
-
-    <!-- Project 2 -->
-    <article class="card">
-      <img src="images/html/tic-tac-toe.png" alt="Tic Tac Toe game" />
-      <h3>Tic-Tac-Toe</h3>
-      <p>
-        A customizable browser-based Tic-Tac-Toe game.
-        Perfect for quick fun with friends.
-      </p>
-      <a href="https://indiancoder3.github.io/tictactoe-ic3/" target="_blank">🎮 Play Now</a>
-    </article>
-
-    <!-- Project 3 -->
-    <article class="card">
-      <img src="images/python/pycalc.png" alt="PyCalc Calculator" />
-      <h3>PyCalc</h3>
-      <p>
-        A fast and simple Python-based calculator
-        for everyday math operations.
-      </p>
-      <a href="https://github.com/IndianCoder3/PyCalc_ic3/" target="_blank">📓 GitHub</a>
-    </article>
-
-    <!-- Project 4 -->
-    <article class="card">
-      <img src="images/smallbasic/timeapp.png" alt="Time App" />
-      <h3>Time App</h3>
-      <p>
-        A lightweight, ad-free desktop app to view time.
-        No tracking. No nonsense.
-      </p>
-      <a href="https://github.com/IndianCoder3/Basic-Time-App_ic3" target="_blank">📓 GitHub</a>
-    </article>
-
-  </div>
+        <div class="card">
+            <h3>🔐 QR Code Generator</h3>
+            <p>
+                Generate QR codes with custom colors and instant downloads. Built with Streamlit for easy deployment and interactive UI.
+            </p>
+            <a href="https://qr-code-gen-ic3.streamlit.app/" target="_blank">🚀 Live Demo</a>
+            <a href="https://github.com/IndianCoder3/Str-QR-Code-Gen_ic3" target="_blank">🐙 GitHub</a>
+        </div>
+    </div>
 </section>
 
-<!-- ================= MORE ================= -->
-<section class="projects">
-  <h2 class="reveal">And More…</h2>
-
-  <p class="reveal delay">
-    I actively build and update projects every week.
-    <br />
-    While new apps are baking, explore my work or learn more about me!
-  </p>
+<!-- ================= SOCIAL & CONNECT ================= -->
+<section style="text-align: center; background: rgba(255, 215, 0, 0.05); border-radius: 10px; padding: 3rem;">
+    <h2 class="reveal">🌟 Connect With Me</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-muted);">
+        Follow my journey and stay updated with new projects!
+    </p>
+    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+        <a href="https://github.com/IndianCoder3" target="_blank" class="btn btn-filled">🐙 GitHub</a>
+        <a href="https://scratch.mit.edu/users/IndianCoder3/" target="_blank" class="btn btn-filled">🐱 Scratch</a>
+        <a href="https://youtube.com/@IndianCoder3_yt" target="_blank" class="btn btn-filled">📺 YouTube</a>
+        <a href="https://twitch.tv/indiancoder3" target="_blank" class="btn btn-filled">🎮 Twitch</a>
+        <a href="#discord" class="btn btn-filled">💬 Discord: indiancoder3_alt</a>
+        <a href="contact.html" class="btn">📧 Email</a>
+    </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer>
-  <p class="reveal">
-    © 2025–2026 Abhinu Gupta |
-    <a href="https://github.com/IndianCoder3" target="_blank">GitHub</a> |
-    <a href="https://scratch.mit.edu/users/IndianCoder3" target="_blank">Scratch</a> |
-    <a href="mailto:indiancoder3@hotmail.com">Mail Me</a>
-  </p>
-
-  <p style="font-size: 0.9em; opacity: 0.8;" class="reveal">
-    Last updated: January 2026
-  </p>
+    <p>
+        © 2026 Abhinu Gupta (IndianCoder3) | 
+        <a href="https://github.com/IndianCoder3" target="_blank">GitHub</a> |
+        <a href="https://scratch.mit.edu/users/IndianCoder3/" target="_blank">Scratch</a> |
+        <a href="contact.html">Contact</a>
+    </p>
+    <p style="margin-top: 1rem; font-size: 0.9rem;">Built with 💛 using modern web technologies</p>
 </footer>
 
-<script src="js/script.js"></script>
+<script>
+    // Typing effect
+    const typingText = document.getElementById('typingText');
+    const fullText = 'Building modern projects with Python, HTML/CSS, Scratch, and my own programming language ICTL';
+    let index = 0;
+
+    function typeText() {
+        if (index < fullText.length) {
+            typingText.textContent += fullText.charAt(index);
+            index++;
+            setTimeout(typeText, 50); // Speed of typing
+        } else {
+            typingText.classList.add('typed'); // Remove cursor when done
+        }
+    }
+
+    // Start typing when page loads
+    window.addEventListener('load', typeText);
+
+    // Back to top button
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Theme toggle (placeholder)
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+        themeToggle.textContent = themeToggle.textContent === '🌙' ? '☀️' : '🌙';
+    });
+</script>
+
 </body>
 </html>

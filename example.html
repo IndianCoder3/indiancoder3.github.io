@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!-- ================= BASIC PAGE SETUP ================= -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ================= GOOGLE SEARCH CONSOLE & SEO ================= -->
+    <meta name="google-site-verification" content="UbCFuyQnLiGfHFSU_Z5NFExI5jrTz9EGxkf1ygz7sG4" />
+    <title>Abhinu Gupta (IndianCoder3) — Developer Portfolio</title>
+    <meta name="description" content="Official portfolio of Abhinu Gupta (IndianCoder3), a young developer building real-world projects using Python, Streamlit, .NET, Scratch, and modern web technologies." />
+    <meta name="keywords" content="IndianCoder3, Abhinu Gupta, Python developer, Streamlit apps, Scratch OS, web developer India" />
+    <meta name="author" content="Abhinu Gupta (IndianCoder3)" />
+    <link rel="canonical" href="https://indiancoder3.github.io/" />
+
+    <!-- ================= OPEN GRAPH (SOCIAL PREVIEWS) ================= -->
+    <meta property="og:title" content="Abhinu Gupta (IndianCoder3) — Developer Portfolio" />
+    <meta property="og:description" content="Explore projects by IndianCoder3, including Python apps, Streamlit tools, .NET projects, Scratch creations, and web development work." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://indiancoder3.github.io/" />
+    <meta property="og:image" content="https://indiancoder3.github.io/images/logo.png" />
+
+    <!-- ================= STRUCTURED DATA ================= -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Abhinu Gupta",
+      "alternateName": "IndianCoder3",
+      "url": "https://indiancoder3.github.io/",
+      "sameAs": [
+        "https://github.com/IndianCoder3",
+        "https://scratch.mit.edu/users/IndianCoder3/"
+      ],
+      "jobTitle": "Student Developer",
+      "knowsAbout": [
+        "Python", "Streamlit", ".NET", "Web Development", "Scratch Programming"
+      ]
+    }
+    </script>
+
+    <!-- ================= FONTS & ICONS ================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ================= TAILWIND CSS ================= -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#141414',
+                            700: '#1f1f1f',
+                        },
+                        gold: {
+                            300: '#FDE047',
+                            400: '#FACC15',
+                            500: '#D4AF37', /* Classic Gold */
+                            600: '#B38728',
+                            700: '#8A631B',
+                        }
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #B38728 0%, #FDE047 50%, #D4AF37 100%)',
+                        'gold-shimmer': 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- ================= CUSTOM "GOLD & SMOOTH" STYLES ================= -->
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            overflow-x: hidden;
+        }
+
+        /* Smooth text selection */
+        ::selection {
+            background: #D4AF37;
+            color: #000;
+        }
+
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        /* Gold text gradient */
+        .text-gold {
+            background: linear-gradient(135deg, #B38728 0%, #FDE047 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        /* Shimmer Animation for Buttons */
+        .btn-gold {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .btn-gold::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: skewX(-20deg);
+            transition: all 0.5s ease;
+        }
+        .btn-gold:hover::after {
+            left: 150%;
+        }
+
+        /* Smooth Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Card Hover Effects */
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.3);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        /* Typing Cursor */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: #D4AF37;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Ambient Glow */
+        .ambient-glow {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, rgba(10,10,10,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-black">
+
+    <!-- Loading Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gold-gradient z-50 transition-all duration-100 w-0"></div>
+
+    <!-- Ambient Background Glows -->
+    <div class="ambient-glow w-[600px] h-[600px] top-[-200px] left-[-200px]"></div>
+    <div class="ambient-glow w-[800px] h-[800px] bottom-[-200px] right-[-200px]"></div>
+
+    <!-- ================= NAVIGATION ================= -->
+    <nav class="fixed w-full z-40 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif font-bold text-gold tracking-wider flex items-center gap-2">
+                <i data-lucide="code-2" class="text-gold-500"></i>
+                IC3.
+            </a>
+            
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-sm font-medium hover:text-gold-400 transition-colors">Home</a>
+                <a href="#projects" class="text-sm font-medium hover:text-gold-400 transition-colors">Projects</a>
+                <a href="#about" class="text-sm font-medium hover:text-gold-400 transition-colors">About</a>
+                <a href="#contact" class="px-5 py-2 rounded-full border border-gold-500/50 hover:bg-gold-500 hover:text-black transition-all duration-300 text-sm font-medium">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-300 hover:text-gold-500 transition-colors" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-dark-900/95 backdrop-blur-lg z-50 hidden flex-col items-center justify-center space-y-8 opacity-0 transition-opacity duration-300">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-gray-400 hover:text-gold-500">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="#home" class="text-2xl font-serif hover:text-gold-400 transition-colors mobile-link">Home</a>
+        <a href="#projects" class="text-2xl font-serif hover:text-gold-400 transition-colors mobile-link">Projects</a>
+        <a href="#about" class="text-2xl font-serif hover:text-gold-400 transition-colors mobile-link">About</a>
+        <a href="#contact" class="text-2xl font-serif text-gold-500 hover:text-gold-400 transition-colors mobile-link">Contact</a>
+    </div>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative px-6 pt-20">
+        <div class="max-w-4xl mx-auto text-center z-10 reveal">
+            <p class="text-gold-500 font-medium tracking-widest uppercase mb-4 text-sm">Welcome to my portfolio</p>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
+                Hi, I'm <span class="text-gold">Abhinu Gupta</span><br/>
+                <span class="text-3xl md:text-5xl text-gray-400 mt-2 block">(IndianCoder3)</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-10 h-8 typing-cursor" id="typing-text"></p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#projects" class="btn-gold bg-gold-gradient text-black font-semibold px-8 py-3 rounded-full hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] flex items-center gap-2 w-full sm:w-auto justify-center">
+                    View Projects <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <a href="#about" class="px-8 py-3 rounded-full border border-gray-700 hover:border-gold-500 hover:text-gold-400 transition-all duration-300 glass w-full sm:w-auto justify-center flex">
+                    About Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FEATURED PROJECTS ================= -->
+    <section id="projects" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-serif font-bold mb-4">Featured <span class="text-gold">Projects</span></h2>
+                <div class="w-24 h-1 bg-gold-gradient mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto">Apps I’ve built, deployed, and actively maintain. Combining form, function, and modern technologies.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-container">
+                <!-- Projects will be injected here via JS to keep HTML clean -->
+            </div>
+            
+            <div class="text-center mt-16 reveal">
+                <h3 class="text-2xl font-serif mb-4">And More...</h3>
+                <p class="text-gray-400">I actively build and update projects every week. Check out my GitHub for the latest experiments.</p>
+                <a href="https://github.com/IndianCoder3" target="_blank" class="inline-flex items-center gap-2 mt-6 text-gold-500 hover:text-gold-400 transition-colors">
+                    Explore GitHub <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT & CONTACT ================= -->
+    <section id="about" class="py-24 px-6 bg-dark-800/50 border-t border-white/5 relative">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="text-4xl font-serif font-bold mb-4">About <span class="text-gold">Me</span></h2>
+            <div class="w-24 h-1 bg-gold-gradient mx-auto rounded-full mb-8"></div>
+            <p class="text-lg text-gray-300 leading-relaxed mb-12">
+                I am a passionate student developer focused on creating real-world applications. My toolkit includes Python, Streamlit, .NET, and modern web technologies. From building simple web tools to developing my own learning-focused Operating System, I love solving problems through code.
+            </p>
+            
+            <div id="contact" class="glass p-8 rounded-2xl inline-block text-left w-full max-w-2xl border border-gold-500/20">
+                <h3 class="text-2xl font-serif font-bold mb-6 text-center text-gold-400">Let's Connect</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <a href="mailto:indiancoder3@hotmail.com" class="flex items-center gap-4 p-4 rounded-xl bg-dark-900/50 hover:bg-dark-700 transition-colors group border border-transparent hover:border-gold-500/30">
+                        <div class="p-3 rounded-full bg-gold-500/10 text-gold-500 group-hover:scale-110 transition-transform">
+                            <i data-lucide="mail"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400">Email Me</p>
+                            <p class="font-medium">indiancoder3@hotmail.com</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/IndianCoder3" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-dark-900/50 hover:bg-dark-700 transition-colors group border border-transparent hover:border-gold-500/30">
+                        <div class="p-3 rounded-full bg-gold-500/10 text-gold-500 group-hover:scale-110 transition-transform">
+                            <i data-lucide="github"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400">GitHub</p>
+                            <p class="font-medium">@IndianCoder3</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="py-8 text-center border-t border-white/10 relative z-10 bg-dark-900">
+        <p class="text-gray-400 mb-2 font-medium">
+            © 2025–2026 <span class="text-gold-500">Abhinu Gupta</span>
+        </p>
+        <div class="flex justify-center gap-4 text-sm text-gray-500 mb-4">
+            <a href="https://github.com/IndianCoder3" target="_blank" class="hover:text-gold-400 transition-colors">GitHub</a>
+            <span>|</span>
+            <a href="https://scratch.mit.edu/users/IndianCoder3" target="_blank" class="hover:text-gold-400 transition-colors">Scratch</a>
+            <span>|</span>
+            <a href="mailto:indiancoder3@hotmail.com" class="hover:text-gold-400 transition-colors">Mail</a>
+        </div>
+        <p class="text-xs text-gray-600">Last updated: January 2026</p>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 p-3 rounded-full bg-gold-500 text-black shadow-[0_0_15px_rgba(212,175,55,0.4)] opacity-0 translate-y-10 transition-all duration-300 z-50 hover:scale-110 hidden">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Project Data
+        const projects = [
+            {
+                title: "Basic ICTL (Abhinu Dev)",
+                desc: "A foundational developer library and utility toolset built for streamlined control and logic implementation.",
+                image: "images/code-placeholder.svg", 
+                icon: "terminal",
+                liveUrl: null,
+                githubUrl: "https://github.com/IndianCoder3/abhinu-dev_basic-ictl",
+                tags: ["Development Tool", "Library"]
+            },
+            {
+                title: "Abhinu's WebCode Core IDE",
+                desc: "The free, lightweight IDE you need directly in your browser. Built for speed and accessibility.",
+                image: "images/html/abhinucode.png",
+                icon: "code",
+                liveUrl: "https://indiancoder3.github.io/abhinu-ide/",
+                githubUrl: "https://github.com/IndianCoder3/abhinu-ide",
+                tags: ["Web App", "IDE"]
+            },
+            {
+                title: "AbhinuOS",
+                desc: "A learning-focused OS project. Includes a Linux edition (Kubuntu, Cubic) and a custom C kernel using Limine.",
+                image: "images/AbhinuOS.png",
+                icon: "cpu",
+                liveUrl: "abhinuos.html",
+                githubUrl: "https://github.com/IndianCoder3",
+                tags: ["OS", "C", "Linux"]
+            },
+            {
+                title: "Streamlit QR Generator",
+                desc: "Generate QR codes from text or URLs, customize colors, and download instantly. Cloud-ready.",
+                image: "images/python/qrcode.png",
+                icon: "qr-code",
+                liveUrl: "https://qr-code-gen-ic3.streamlit.app/",
+                githubUrl: "https://github.com/IndianCoder3/Str-QR-Code-Gen_ic3",
+                tags: ["Python", "Streamlit"]
+            },
+            {
+                title: "Tic-Tac-Toe",
+                desc: "A customizable browser-based Tic-Tac-Toe game. Perfect for quick fun with friends.",
+                image: "images/html/tic-tac-toe.png",
+                icon: "gamepad-2",
+                liveUrl: "https://indiancoder3.github.io/tictactoe-ic3/",
+                githubUrl: null,
+                tags: ["Game", "HTML/JS"]
+            },
+            {
+                title: "PyCalc & Time App",
+                desc: "A fast Python calculator and a lightweight, ad-free desktop app to view time without tracking.",
+                image: "images/python/pycalc.png",
+                icon: "calculator",
+                liveUrl: null,
+                githubUrl: "https://github.com/IndianCoder3/PyCalc_ic3/",
+                tags: ["Python", "Desktop"]
+            }
+        ];
+
+        // Fallback image handling generator
+        const generateGradientSvg = (icon) => `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%231a1a1a"/><stop offset="100%" stop-color="%23332a0a"/></linearGradient></defs><rect width="100%" height="100%" fill="url(%23g)"/><text x="50%" y="50%" font-family="sans-serif" font-size="24" fill="%23D4AF37" text-anchor="middle" dominant-baseline="middle">Project Preview</text></svg>`;
+
+        // Render Projects
+        const projectContainer = document.getElementById('project-container');
+        projects.forEach((proj, index) => {
+            const fallbackImg = generateGradientSvg(proj.icon);
+            const card = document.createElement('article');
+            card.className = 'project-card glass rounded-2xl overflow-hidden flex flex-col h-full reveal';
+            card.style.transitionDelay = `${index * 100}ms`;
+            
+            card.innerHTML = `
+                <div class="h-48 w-full bg-dark-900 relative overflow-hidden group">
+                    <img src="${proj.image}" alt="${proj.title}" 
+                         onerror="this.onerror=null; this.src='${fallbackImg}';"
+                         class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-105 transform">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 flex gap-2">
+                        ${proj.tags.map(tag => `<span class="text-xs font-medium px-2 py-1 rounded bg-black/50 text-gold-400 border border-gold-500/30 backdrop-blur-sm">${tag}</span>`).join('')}
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                        <i data-lucide="${proj.icon}" class="w-5 h-5 text-gold-500"></i>
+                        ${proj.title}
+                    </h3>
+                    <p class="text-gray-400 text-sm mb-6 flex-grow leading-relaxed">${proj.desc}</p>
+                    <div class="flex items-center gap-4 mt-auto pt-4 border-t border-white/5">
+                        ${proj.liveUrl ? `<a href="${proj.liveUrl}" target="_blank" class="text-sm font-semibold text-gold-500 hover:text-white transition-colors flex items-center gap-1">Live Demo <i data-lucide="external-link" class="w-3 h-3"></i></a>` : ''}
+                        ${proj.githubUrl ? `<a href="${proj.githubUrl}" target="_blank" class="text-sm font-semibold text-gray-400 hover:text-white transition-colors flex items-center gap-1">GitHub <i data-lucide="github" class="w-3 h-3"></i></a>` : ''}
+                    </div>
+                </div>
+            `;
+            projectContainer.appendChild(card);
+        });
+        lucide.createIcons(); // Re-initialize icons for dynamic content
+
+        // Typing Effect
+        const textArray = ["Building real-world applications.", "Python, Web Tech, and .NET.", "Creator of AbhinuOS.", "Turning logic into software."];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingEl = document.getElementById("typing-text");
+
+        function type() {
+            const currentText = textArray[textIndex];
+            if (isDeleting) {
+                typingEl.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingEl.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentText.length) {
+                typeSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % textArray.length;
+                typeSpeed = 500; // Pause before new word
+            }
+            setTimeout(type, typeSpeed);
+        }
+        setTimeout(type, 1000);
+
+        // Scroll Reveal Animation
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            reveals.forEach(reveal => {
+                const revealTop = reveal.getBoundingClientRect().top;
+                if (revealTop < windowHeight - 50) {
+                    reveal.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Trigger on load
+
+        // Progress Bar & Back to Top & Navbar Style
+        const progressBar = document.getElementById('scroll-progress');
+        const backToTopBtn = document.getElementById('backToTop');
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            // Progress bar
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + "%";
+
+            // Back to top toggle
+            if (winScroll > 300) {
+                backToTopBtn.classList.remove('hidden');
+                setTimeout(() => {
+                    backToTopBtn.classList.remove('opacity-0', 'translate-y-10');
+                    backToTopBtn.classList.add('opacity-100', 'translate-y-0');
+                }, 10);
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'translate-y-10');
+                backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                setTimeout(() => backToTopBtn.classList.add('hidden'), 300);
+            }
+
+            // Navbar Glass effect enhancement on scroll
+            if (winScroll > 50) {
+                navbar.classList.add('shadow-lg', 'shadow-black/50', 'bg-dark-900/90');
+                navbar.classList.remove('bg-dark-900/40');
+            } else {
+                navbar.classList.remove('shadow-lg', 'shadow-black/50', 'bg-dark-900/90');
+                navbar.classList.add('bg-dark-900/40');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => mobileMenu.classList.remove('opacity-0'), 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('opacity-0');
+                setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+                document.body.style.overflow = '';
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+    </script>
+</body>
+</html>
