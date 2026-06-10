@@ -2,25 +2,48 @@
    @IndianCoder3 — Portfolio JS
    ============================================================ */
 
-// ── Page routing ─────────────────────────────────────────────
-function showPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  const page = document.getElementById('page-' + id);
-  if (page) { page.classList.add('active'); }
-  window.scrollTo({ top: 0, behavior: 'instant' });
+// ── Custom Cursor ────────────────────────────────────────────
+const dot = document.querySelector('.cursor-dot');
+const outline = document.querySelector('.cursor-outline');
 
-  // Highlight active nav link
-  document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
-    a.classList.toggle('active', a.dataset.page === id);
-  });
+let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+let outlineX = window.innerWidth / 2, outlineY = window.innerHeight / 2;
 
-  // Close mobile nav
-  navLinks.classList.remove('open');
-  burger.classList.remove('open');
+document.addEventListener('mousemove', e => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
 
-  // Trigger reveals on the newly visible page
-  setTimeout(checkReveals, 80);
+function animateCursor() {
+  if (!dot || !outline) return;
+  
+  // Update dot position directly
+  dot.style.left = `${mouseX}px`;
+  dot.style.top = `${mouseY}px`;
+  
+  // Smoothly interpolate outline position
+  outlineX += (mouseX - outlineX) * 0.2;
+  outlineY += (mouseY - outlineY) * 0.2;
+  
+  outline.style.left = `${outlineX}px`;
+  outline.style.top = `${outlineY}px`;
+  
+  requestAnimationFrame(animateCursor);
 }
+animateCursor();
+
+// Cursor hover effect on interactive elements
+document.querySelectorAll('a, button, .feature-card, .pc-inner').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    outline.style.width = '50px';
+    outline.style.height = '50px';
+  });
+  el.addEventListener('mouseleave', () => {
+    outline.style.width = '30px';
+    outline.style.height = '30px';
+  });
+});
+
 
 // ── Navbar scroll glass ───────────────────────────────────────
 const navbar   = document.getElementById('navbar');
@@ -53,15 +76,24 @@ document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
 const LINES = [
   'Architect of AbhinuOS and Basic ICTL',
   'A Cool Indian Coder \u{1F1EE}\u{1F1F3}',
-  'App Crafter'
+  'App Crafter',
+  'Jai Shree Krishna',
+  'You are right! They don\'t like me, they love me',
+  'Building the future, one line at a time',
+  'Debugging life, one coffee at a time',
+  'Innovating the web, OS, and everything in between'
 ];
 
-let li = 0, ci = 0, deleting = false;
+const RARE_LINES = ['The one who never quits MineCraft'];
+
+let li = 0, ci = 0, deleting = false, showingRare = false, rareLine = '';
 const tyEl = document.getElementById('typed-text');
 
 function tick() {
   if (!tyEl) return;
-  const line = LINES[li];
+  
+  let line = showingRare ? rareLine : LINES[li];
+  
   if (!deleting) {
     tyEl.textContent = line.slice(0, ci + 1);
     ci++;
@@ -75,7 +107,15 @@ function tick() {
     ci--;
     if (ci === 0) {
       deleting = false;
-      li = (li + 1) % LINES.length;
+      showingRare = false;
+      
+      // 10% chance to show a rare line
+      if (Math.random() < 0.1) {
+        showingRare = true;
+        rareLine = RARE_LINES[Math.floor(Math.random() * RARE_LINES.length)];
+      } else {
+        li = (li + 1) % LINES.length;
+      }
       return setTimeout(tick, 380);
     }
     setTimeout(tick, 28);

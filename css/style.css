@@ -1,8 +1,28 @@
-/* ============================================================
-   @IndianCoder3 — Portfolio CSS
-   Black / Gold theme · Space Grotesk display · JetBrains Mono
-   ============================================================ */
-
+/* Custom Cursor */
+.cursor-dot, .cursor-outline {
+  position: fixed;
+  top: 0; left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+}
+.cursor-dot {
+  width: 6px; height: 6px;
+  background: var(--gold);
+  transform: translate(-50%, -50%);
+}
+.cursor-outline {
+  width: 30px; height: 30px;
+  border: 1px solid var(--gold);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+}
+body:hover .cursor-dot, body:hover .cursor-outline {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .cursor-dot, .cursor-outline { display: none; }
+}
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* ── Variables ─────────────────────────────────────────────── */
@@ -42,6 +62,18 @@ body {
   line-height: 1.7;
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255,215,0,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,215,0,0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -1;
+  pointer-events: none;
 }
 img { max-width: 100%; display: block; }
 a  { color: var(--gold); text-decoration: none; transition: color var(--dur) var(--ease); }
@@ -54,20 +86,29 @@ ul { list-style: none; }
 
 /* ── Navbar ─────────────────────────────────────────────────── */
 #navbar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
-  height: 64px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  height: 56px;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 5%;
-  background: transparent;
-  transition: background var(--dur) var(--ease),
-              backdrop-filter var(--dur) var(--ease),
-              border-bottom var(--dur) var(--ease);
+  padding: 0 1.5rem;
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--gold-border);
+  border-radius: 100px;
+  z-index: 900;
+  transition: all var(--dur) var(--ease);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  animation: borderGlow 4s ease-in-out infinite;
 }
 #navbar.scrolled {
-  background: rgba(0,0,0,0.78);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--gold-border);
+  background: rgba(0,0,0,0.8);
+  border-color: var(--gold);
+  box-shadow: 0 10px 40px rgba(255,215,0,0.1);
 }
 
 .nav-logo {
@@ -126,7 +167,7 @@ ul { list-style: none; }
 .page {
   display: none;
   min-height: 100vh;
-  padding-top: 64px;
+  padding-top: 100px;
   animation: pgIn .38s var(--ease) both;
 }
 .page.active { display: block; }
@@ -134,6 +175,17 @@ ul { list-style: none; }
 @keyframes pgIn {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: none; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(255,215,0,0.15); box-shadow: 0 0 10px rgba(255,215,0,0.05); }
+  50% { border-color: rgba(255,215,0,0.3); box-shadow: 0 0 20px rgba(255,215,0,0.1); }
 }
 
 /* ── Scroll-reveal ──────────────────────────────────────────── */
@@ -627,10 +679,88 @@ footer {
 /* Reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-}/* About Cards */
-.about-cards-container { display: flex; flex-direction: column; gap: 1rem; }
-.about-card { background: var(--bg-card); border: 1px solid var(--gold-border); border-radius: var(--radius-sm); padding: 1.2rem; }
-.about-card p { margin-bottom: 0.5rem; font-size: 0.95rem; }
-.about-card p:last-child { margin-bottom: 0; }
-.about-card strong { color: var(--gold); }
+}/* Ripple Button Effect */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease-out, height 0.4s ease-out;
+  pointer-events: none;
+}
+.btn:hover::after {
+  width: 200%; height: 200%;
+}
 
+/* Text Hover Scramble Effect */
+.pc-title, .hero-name {
+  transition: letter-spacing 0.3s ease;
+}
+.pc-inner:hover .pc-title {
+  letter-spacing: 1px;
+}
+
+/* Staggered entry for list items */
+.nav-links li {
+  animation: slideInNav 0.5s ease-out forwards;
+  opacity: 0;
+}
+.nav-links li:nth-child(1) { animation-delay: 0.1s; }
+.nav-links li:nth-child(2) { animation-delay: 0.2s; }
+.nav-links li:nth-child(3) { animation-delay: 0.3s; }
+.nav-links li:nth-child(4) { animation-delay: 0.4s; }
+.nav-links li:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideInNav {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtle image hover scale */
+.about-avatar img {
+  transition: transform 0.5s ease;
+}
+.about-avatar:hover img {
+  transform: scale(1.05);
+}
+/* Shine Effect for Cards */
+@keyframes shine {
+  0% { transform: skewX(-20deg) translateX(-150%); }
+  100% { transform: skewX(-20deg) translateX(150%); }
+}
+
+.feature-card, .pc-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before, .pc-inner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transform: skewX(-20deg) translateX(-150%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.feature-card:hover::before, .pc-inner:hover::before {
+  animation: shine 0.7s ease-in-out;
+}
+
+/* Enhanced Hero Bloom */
+@keyframes rotateBloom {
+  from { transform: translate(-50%,-50%) rotate(0deg); }
+  to { transform: translate(-50%,-50%) rotate(360deg); }
+}
+.hero::after {
+  animation: rotateBloom 20s linear infinite;
+}
