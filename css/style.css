@@ -535,12 +535,60 @@ footer {
 /* ──────────────────────────────────────────────────────────────
    NEW ADDITIONS: SKILLS & GEAR
    ────────────────────────────────────────────────────────────── */
-/* Minecraft XP Bars */
+/* Minecraft XP Bars - High Fidelity Style */
 .skill-bar-container { margin-bottom: 1.5rem; }
 .skill-label-row { display: flex; justify-content: space-between; margin-bottom: 0.4rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; }
-.skill-percentage { color: #7FFF00; font-weight: bold; }
-.skill-bar-bg { background: #000; height: 12px; border: 2px solid #333; position: relative; }
-.skill-bar-fill { height: 100%; background: #7FFF00; transition: width 1s ease-in-out; box-shadow: inset 0 0 4px rgba(0,0,0,0.5); }
+.skill-percentage { color: var(--gold); font-weight: bold; }
+.skill-bar-bg {
+  background: #000;
+  height: 16px;
+  border: 2px solid #555;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 2px 0 #000;
+}
+.skill-bar-fill {
+  height: 100%;
+  background: 
+    linear-gradient(to bottom, var(--gold-pale) 0%, var(--gold) 50%, var(--gold-dim) 100%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 6px,
+      rgba(0,0,0,0.4) 6px,
+      rgba(0,0,0,0.4) 7px
+    );
+  background-size: 100% 100%, 7px 100%;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3);
+}
+.skill-level {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gold);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 800;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  z-index: 2;
+  pointer-events: none;
+}
+.skill-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 6px,
+    rgba(255,255,255,0.15) 6px,
+    rgba(255,255,255,0.15) 7px
+  );
+  pointer-events: none;
+}
 
 /* Gear Cards */
 .gear-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
