@@ -95,14 +95,22 @@ ul { list-style: none; }
   height: 56px;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 1.5rem;
-  background: rgba(10, 10, 10, 0.6);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid var(--gold-border);
+  background: linear-gradient(
+    135deg, 
+    rgba(20, 20, 20, 0.7) 0%, 
+    rgba(10, 10, 10, 0.5) 50%, 
+    rgba(20, 20, 20, 0.7) 100%
+  );
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  border-top: 1px solid rgba(255, 215, 0, 0.3);
   border-radius: 100px;
   z-index: 900;
   transition: all var(--dur) var(--ease);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.5),
+    inset 0 1px 1px rgba(255,255,255,0.1);
   animation: borderGlow 4s ease-in-out infinite;
 }
 #navbar.scrolled {

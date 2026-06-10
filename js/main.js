@@ -2,6 +2,26 @@
    @IndianCoder3 — Portfolio JS
    ============================================================ */
 
+// ── Page routing ─────────────────────────────────────────────
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const page = document.getElementById('page-' + id);
+  if (page) { page.classList.add('active'); }
+  window.scrollTo({ top: 0, behavior: 'instant' });
+
+  // Highlight active nav link
+  document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
+    a.classList.toggle('active', a.dataset.page === id);
+  });
+
+  // Close mobile nav
+  navLinks.classList.remove('open');
+  burger.classList.remove('open');
+
+  // Trigger reveals on the newly visible page
+  setTimeout(checkReveals, 80);
+}
+
 // ── Custom Cursor ────────────────────────────────────────────
 const dot = document.querySelector('.cursor-dot');
 const outline = document.querySelector('.cursor-outline');
