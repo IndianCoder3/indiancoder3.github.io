@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#080909" />
+  <meta name="theme-color" content="#05070d" />
   <meta name="description" content="Abhinu (@IndianCoder3) — student developer from India. Creator of Abhinu.Dev Basic ICTL, main web dev for the AstralyxPvP Minecraft community (owned by Frostrax), and builder of AbhinuOS." />
 
   <title>AbhinuDev / @IndianCoder3</title>
@@ -29,7 +29,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -39,417 +39,394 @@
 
   <!-- ══════════ TOPBAR ══════════ -->
   <header class="topbar">
-    <a class="wordmark" href="#top">
-      <img class="nav-logo" src="images/logo.png" alt="Abhinu logo" />
-      IndianCoder<i>3</i>
-    </a>
+    <div class="topbar-inner">
+      <a class="wordmark" href="#top">
+        <img class="nav-logo" src="images/logo.png" alt="Abhinu logo" />
+        IndianCoder<i>3</i>
+      </a>
 
-    <nav class="nav-links" id="nav-links">
-      <a href="#focus">Focus</a>
-      <a href="#astralyx">AstralyxPvP</a>
-      <a href="#projects">Log</a>
-      <a href="#about">About</a>
-      <a href="#links">Links</a>
-    </nav>
+      <nav class="nav-links" id="nav-links">
+        <a href="#focus">Focus</a>
+        <a href="#astralyx">AstralyxPvP</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#links">Links</a>
+      </nav>
 
-    <a class="header-link" href="https://github.com/IndianCoder3" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> github.com/IndianCoder3 ↗</a>
+      <a class="nav-gh" href="https://github.com/IndianCoder3" target="_blank" rel="noopener">
+        <i class="fa-brands fa-github"></i><span>GitHub</span>
+      </a>
 
-    <button class="menu-button" id="menu-button" aria-label="Toggle menu">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-    </button>
+      <button class="menu-button" id="menu-button" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
   </header>
 
   <!-- ══════════ HERO ══════════ -->
-  <section class="hero-section" id="top">
+  <section class="hero" id="top">
     <div class="hero-copy">
-      <p class="eyebrow"><span class="eyebrow-pin"></span> student developer · from India</p>
+      <p class="hero-kicker">// indiancoder3 · student developer</p>
 
       <h1>Abhinu<em>Dev</em></h1>
 
       <div class="hero-lede" id="typed"></div>
 
       <div class="hero-note">
-        <span>now</span>
-        Top of the list — the <b>AstralyxPvP</b> ecosystem and the <b>Basic ICTL</b> programming language.
+        <span class="hn-label">now</span>
+        AstralyxPvP ecosystem <i>+</i> the Basic ICTL language
       </div>
 
       <div class="hero-actions">
-        <a class="button-primary" href="#focus">
-          View focus <span class="arr">→</span>
-        </a>
-        <a class="text-link" href="https://github.com/IndianCoder3" target="_blank" rel="noopener">github.com/IndianCoder3</a>
+        <a class="btn btn-gold" href="#focus">View focus <span>→</span></a>
+        <a class="btn btn-ghost" href="https://github.com/IndianCoder3" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> github.com/IndianCoder3</a>
       </div>
     </div>
 
-    <!-- orbit -->
-    <div class="hero-orbit">
-      <span class="orbit-ring ring-one"></span>
-      <span class="orbit-ring ring-two"></span>
-      <span class="orbit-label label-ictl">ICTL</span>
-      <span class="orbit-label label-astralyx">AstralyxPvP</span>
-      <div class="orbit-core"><img src="images/logo.png" alt="Abhinu logo" /></div>
-    </div>
-
-    <!-- signal panel -->
-    <aside class="signal-panel">
-      <div class="panel-top">
-        <span>server signal</span>
-        <span class="panel-dot"></span>
+    <!-- server card -->
+    <aside class="server-card">
+      <div class="sc-head">
+        <span class="sc-name"><span class="status-dot"></span> astralyxpvp</span>
+        <span class="sc-ip" id="java-ip" title="Click to copy">java.astralyxpvp.int.yt</span>
       </div>
-      <div class="panel-stamp">astralyxpvp · live</div>
-      <div class="panel-number">1.9<small>+</small></div>
-      <p>India-based FFA Minecraft server — ELO rankings, live leaderboards, cracked &amp; free to play.</p>
-      <div class="signal-rule"></div>
-      <dl>
-        <div><dt>Java ip</dt><dd class="copy-ip" id="java-ip" title="Click to copy">java.astralyxpvp.int.yt</dd></div>
-        <div><dt>Owned by</dt><dd><a href="https://youtube.com/@Frostrax" target="_blank" rel="noopener">Frostrax ↗</a></dd></div>
-        <div><dt>Dev team</dt><dd>NebulaGames</dd></div>
-      </dl>
-      <span class="panel-foot">not my server · owned &amp; run by Frostrax</span>
+
+      <div class="sc-rows">
+        <div class="sc-row"><label>owned by</label><a href="https://youtube.com/@Frostrax" target="_blank" rel="noopener">Frostrax →</a></div>
+        <div class="sc-row"><label>gamemode</label><span>FFA · 1.9+</span></div>
+        <div class="sc-row"><label>region</label><span>India / ASIA</span></div>
+        <div class="sc-row"><label>team</label><span>NebulaGames</span></div>
+      </div>
+
+      <div class="sc-xp">
+        <div class="xp-track"><div class="xp-fill notched" style="width:87%"></div></div>
+        <div class="sc-xp-meta"><span>server status</span><span>online</span></div>
+      </div>
+
+      <code class="sc-cmd">$ java -jar astralyx.jar <span class="cursor">▌</span></code>
     </aside>
   </section>
 
   <!-- ══════════ FOCUS ══════════ -->
-  <section class="content-layout" id="focus">
-    <div class="context-rail">
-      <p class="rail-label">§ focus</p>
-      <h2>Where I put my <span>energy</span></h2>
-      <p>Two things get most of my time right now — the <b>AstralyxPvP</b> community's entire web + bot ecosystem, and <b>ICTL</b>, my beginner programming language.</p>
-      <div class="legend">
-        <div><span class="legend-line active-line"></span> featured / major</div>
-        <div><span class="legend-line focus-line"></span> active</div>
-        <div><span class="legend-line stale-line"></span> side project</div>
+  <section class="block" id="focus">
+    <div class="block-head">
+      <p class="kicker">§ 01 · focus</p>
+      <h2 class="block-title">Where I put my <em>energy</em></h2>
+      <p class="block-sub">Two things take most of my time — the AstralyxPvP community's full web + bot stack, and ICTL, my beginner programming language.</p>
+    </div>
+
+    <!-- AstralyxPvP -->
+    <article class="focus-card">
+      <div class="fc-top">
+        <img class="fc-logo" src="images/astralyx-logo.png" alt="AstralyxPvP logo" />
+        <span class="fc-badge"><i class="fa-solid fa-crosshairs"></i> featured</span>
       </div>
-    </div>
+      <h3>AstralyxPvP</h3>
+      <p class="fc-desc">
+        A 1.9+ FFA PvP Minecraft server built for India &amp; the ASIA region. I run the community's
+        entire online presence — main site, news, forums, the Discord AI and the AutoMod bot.
+      </p>
+      <div class="chips">
+        <span>java.astralyxpvp.int.yt</span>
+        <span>www.astralyxpvp.int.yt</span>
+        <span>forums.astralyxpvp.int.yt</span>
+        <span>news.astralyxpvp.int.yt</span>
+      </div>
+      <div class="ownership-strip">
+        <span class="os-label"><i class="fa-solid fa-circle-exclamation"></i> not my server</span>
+        I build for this community — I don't own it. <b>AstralyxPvP belongs to <a href="https://youtube.com/@Frostrax" target="_blank" rel="noopener">Frostrax ↗</a></b>
+      </div>
+      <div class="fc-actions">
+        <a class="btn-sm" href="https://www.astralyxpvp.int.yt" target="_blank" rel="noopener">Main site ↗</a>
+        <a class="btn-sm" href="https://github.com/AstralyxPvP/AstralyxPvP-site" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Site repo</a>
+        <a class="btn-sm" href="https://discord.gg/u8BFrpRwEg" target="_blank" rel="noopener"><i class="fa-brands fa-discord"></i> Discord</a>
+        <a class="btn-sm" href="https://youtube.com/@Frostrax" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> Frostrax · owner</a>
+      </div>
+    </article>
 
-    <div class="project-area">
-      <!-- AstralyxPvP feature -->
-      <article class="feature-card fc-astralyx reveal">
-        <div class="fc-top">
-          <img class="fc-logo" src="images/astralyx-logo.png" alt="AstralyxPvP logo" />
-          <div class="featured-label">featured · major focus</div>
-        </div>
-        <h3>AstralyxPvP</h3>
-        <p class="fc-desc">
-          A 1.9+ FFA PvP Minecraft server built for India &amp; the ASIA region. I run the community's
-          entire online presence — main site, news, forums, the Discord AI, and the AutoMod bot.
-        </p>
-        <div class="fc-meta">
-          <span>java.astralyxpvp.int.yt</span>
-          <span>www.astralyxpvp.int.yt</span>
-          <span>forums.astralyxpvp.int.yt</span>
-          <span>news.astralyxpvp.int.yt</span>
-        </div>
-        <div class="ownership-strip">
-          <span class="os-label">⚠ not my server</span>
-          I build for this community — I don't own it. <b>AstralyxPvP belongs to <a href="https://youtube.com/@Frostrax" target="_blank" rel="noopener">Frostrax ↗</a></b>
-        </div>
-        <div class="fc-actions">
-          <a class="link-pill" href="https://www.astralyxpvp.int.yt" target="_blank" rel="noopener">Main site ↗</a>
-          <a class="link-pill" href="https://github.com/AstralyxPvP/AstralyxPvP-site" target="_blank" rel="noopener">Site repo ↗</a>
-          <a class="link-pill" href="https://discord.gg/u8BFrpRwEg" target="_blank" rel="noopener"><i class="fa-brands fa-discord"></i> Discord</a>
-          <a class="link-pill" href="https://youtube.com/@Frostrax" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> Frostrax · owner</a>
-        </div>
-      </article>
-
-      <!-- ICTL feature -->
-      <article class="feature-card fc-ictl reveal">
-        <div class="fc-top">
-          <img class="fc-banner" src="images/ictl-banner.png" alt="Basic ICTL banner" />
-          <div class="featured-label">featured · favourite</div>
-        </div>
-        <h3>Abhinu.Dev Basic ICTL</h3>
-        <p class="fc-desc">
-          A programming language made for the jump from Scratch to real code. Clean English-like syntax,
-          interactive shell, turtle graphics, GUI — everything to make coding click.<br />
-          <em>Everyone can code!</em>
-        </p>
-        <div class="fc-meta">
-          <span>Python · interpreter</span>
-          <span>Web editor</span>
-          <span>VS Code extension</span>
-        </div>
-        <div class="fc-actions">
-          <a class="link-pill" href="https://github.com/IndianCoder3/Abhinu-Dev_Basic-ICTL" target="_blank" rel="noopener">GitHub ↗</a>
-          <a class="link-pill" href="https://indiancoder3.github.io/abhinu-dev_basic-ictl/editor" target="_blank" rel="noopener">Try the editor ↗</a>
-        </div>
-      </article>
-    </div>
+    <!-- ICTL -->
+    <article class="focus-card">
+      <div class="fc-top">
+        <img class="fc-banner" src="images/ictl-banner.png" alt="Basic ICTL banner" />
+        <span class="fc-badge"><i class="fa-solid fa-star"></i> favourite</span>
+      </div>
+      <h3>Abhinu.Dev Basic ICTL</h3>
+      <p class="fc-desc">
+        A programming language made for the jump from Scratch to real code. Clean English-like syntax,
+        interactive shell, turtle graphics, GUI — everything to make coding click. <em>Everyone can code!</em>
+      </p>
+      <div class="chips">
+        <span>Python interpreter</span>
+        <span>Web editor</span>
+        <span>VS Code extension</span>
+      </div>
+      <div class="fc-actions">
+        <a class="btn-sm" href="https://github.com/IndianCoder3/Abhinu-Dev_Basic-ICTL" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a class="btn-sm" href="https://indiancoder3.github.io/abhinu-dev_basic-ictl/editor" target="_blank" rel="noopener"><i class="fa-solid fa-code"></i> Try the editor</a>
+      </div>
+    </article>
   </section>
 
   <!-- ══════════ ASTRA ECOSYSTEM ══════════ -->
-  <section class="eco-section" id="astralyx">
-    <div class="eco-head">
-      <p class="section-kicker">§ the astralyxpvp stack</p>
-      <h2>Everything I run for <em>the server</em></h2>
-      <p class="eco-sub">Four pieces I own and maintain across the AstralyxPvP platform — from chat to community. I don't own the server, I just build the tools around it.</p>
+  <section class="block block-alt" id="astralyx">
+    <div class="block-head">
+      <p class="kicker">§ 02 · the astralyxpvp stack</p>
+      <h2 class="block-title">Everything I run for <em>the server</em></h2>
+      <p class="block-sub">Four pieces I build and maintain across the AstralyxPvP platform. I don't own the server — I just make the tools around it.</p>
     </div>
 
     <div class="eco-grid">
       <article class="eco-card reveal">
-        <div class="eco-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="eco-ico"><i class="fa-solid fa-shield-halved"></i></div>
         <h3>DesiBot</h3>
-        <div class="eco-sub"><span class="status-mark status-active">active</span> · née Laxmi</div>
+        <span class="status-pill status-active"><span class="sdot"></span> active</span>
         <p>Automatic Discord moderation for AstralyxPvP. Blocks spam, doles out smart punishments and handles rule-breakers automatically — staff never have to stay glued online.</p>
         <div class="eco-role">mostly built by me · DreamLong contributed improvements</div>
-        <div class="eco-links">
-          <a class="link-pill" href="https://github.com/AstralyxPvP/Laxmi" target="_blank" rel="noopener">Repo ↗</a>
-        </div>
+        <div class="eco-links"><a class="btn-sm" href="https://github.com/AstralyxPvP/Laxmi" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a></div>
       </article>
 
       <article class="eco-card reveal">
-        <div class="eco-icon"><i class="fa-solid fa-comments"></i></div>
+        <div class="eco-ico"><i class="fa-solid fa-comments"></i></div>
         <h3>AstralyxForums</h3>
-        <div class="eco-sub"><span class="status-mark status-active">active</span> · forums.astralyxpvp.int.yt</div>
+        <span class="status-pill status-active"><span class="sdot"></span> active</span>
         <p>Discussion forums for the community, in the spirit of Pika-Network / JartexNetwork. I handled the GUI restyle and the backend performance boosts.</p>
         <div class="eco-role">initial skeleton by DreamLong · I did the restyle + backend</div>
         <div class="eco-links">
-          <a class="link-pill" href="https://forums.astralyxpvp.int.yt" target="_blank" rel="noopener">Forums ↗</a>
-          <a class="link-pill" href="https://github.com/AstralyxPvP/AstralyxForums" target="_blank" rel="noopener">Repo ↗</a>
+          <a class="btn-sm" href="https://forums.astralyxpvp.int.yt" target="_blank" rel="noopener">Forums ↗</a>
+          <a class="btn-sm" href="https://github.com/AstralyxPvP/AstralyxForums" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a>
         </div>
       </article>
 
       <article class="eco-card reveal">
-        <div class="eco-icon"><i class="fa-solid fa-robot"></i></div>
+        <div class="eco-ico"><i class="fa-solid fa-robot"></i></div>
         <h3>AstralyxAI</h3>
-        <div class="eco-sub"><span class="status-mark status-active">active</span> · Gemini</div>
+        <span class="status-pill status-active"><span class="sdot"></span> active</span>
         <p>A Discord AI that assists players. Real-time web search, live ELO leaderboards, server status, per-channel memory — all running free on Cloudflare Workers.</p>
         <div class="eco-role">built by me for AstralyxPvP</div>
-        <div class="eco-links">
-          <a class="link-pill" href="https://github.com/AstralyxPvP/AstralyxAI" target="_blank" rel="noopener">Repo ↗</a>
-        </div>
+        <div class="eco-links"><a class="btn-sm" href="https://github.com/AstralyxPvP/AstralyxAI" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a></div>
       </article>
 
       <article class="eco-card reveal">
-        <div class="eco-icon"><i class="fa-solid fa-newspaper"></i></div>
+        <div class="eco-ico"><i class="fa-solid fa-newspaper"></i></div>
         <h3>AstralyxNews</h3>
-        <div class="eco-sub"><span class="status-mark status-active">active</span> · news.astralyxpvp.int.yt</div>
+        <span class="status-pill status-active"><span class="sdot"></span> active</span>
         <p>A news platform built into the main AstralyxPvP site, so staff can publish updates and articles directly to the community.</p>
         <div class="eco-role">built by me, inside the AstralyxPvP-site repo</div>
         <div class="eco-links">
-          <a class="link-pill" href="https://news.astralyxpvp.int.yt" target="_blank" rel="noopener">News ↗</a>
-          <a class="link-pill" href="https://github.com/AstralyxPvP/AstralyxPvP-site" target="_blank" rel="noopener">Repo ↗</a>
+          <a class="btn-sm" href="https://news.astralyxpvp.int.yt" target="_blank" rel="noopener">News ↗</a>
+          <a class="btn-sm" href="https://github.com/AstralyxPvP/AstralyxPvP-site" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Repo</a>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- ══════════ PROJECT LOG ══════════ -->
-  <section class="content-layout" id="projects">
-    <div class="context-rail">
-      <p class="rail-label">§ field log</p>
-      <h2>Project <span>log</span></h2>
-      <p>Everything I've shipped, big and small. Filter by what's featured, AstralyxPvP work, or my personal builds.</p>
-      <div class="legend">
-        <div><span class="legend-line active-line"></span> featured</div>
-        <div><span class="legend-line focus-line"></span> active</div>
-        <div><span class="legend-line stale-line"></span> released / side</div>
+  <!-- ══════════ PROJECTS ══════════ -->
+  <section class="block" id="projects">
+    <div class="block-head">
+      <p class="kicker">§ 03 · field log</p>
+      <h2 class="block-title">Project <em>log</em></h2>
+      <p class="block-sub">Everything I've shipped, big and small. Filter by what's featured, AstralyxPvP work, or my own builds.</p>
+      <div class="filter-tabs" id="filter-tabs">
+        <button class="filter-active" data-filter="all">All <b id="count-all">0</b></button>
+        <button data-filter="featured">Featured <b id="count-featured">0</b></button>
+        <button data-filter="astralyx">Astralyx <b id="count-astralyx">0</b></button>
+        <button data-filter="personal">Personal <b id="count-personal">0</b></button>
       </div>
     </div>
 
-    <div class="project-area">
-      <div class="project-toolbar">
-        <div class="filter-tabs" id="filter-tabs">
-          <button class="filter-active" data-filter="all">All <b id="count-all">0</b></button>
-          <button data-filter="featured">Featured <b id="count-featured">0</b></button>
-          <button data-filter="astralyx">Astralyx <b id="count-astralyx">0</b></button>
-          <button data-filter="personal">Personal <b id="count-personal">0</b></button>
+    <div class="project-panel" id="project-list">
+
+      <div class="project-row featured-row" data-cat="featured astralyx">
+        <span class="row-index">01</span>
+        <div class="project-info">
+          <div class="project-heading">
+            <span class="tag-featured">featured</span>
+            <h3>⚔️ AstralyxPvP site</h3>
+          </div>
+          <p>Full website + news platform for the AstralyxPvP server — status page, leaderboards, store, forums hub and AI.</p>
+          <div class="project-meta"><span>own work on the NebulaGames stack</span></div>
+        </div>
+        <div class="project-status"><span class="status-pill status-featured"><span class="sdot"></span> featured</span></div>
+        <div class="repo-links">
+          <a class="repo-link" href="https://github.com/AstralyxPvP/AstralyxPvP-site" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
 
-      <div class="project-list" id="project-list">
-
-        <div class="project-row featured-row" data-cat="featured astralyx">
-          <span class="row-index">01</span>
-          <div class="project-info">
-            <div class="project-heading">
-              <span class="featured-label">featured</span>
-              <h3>⚔️ AstralyxPvP site</h3>
-            </div>
-            <p>Full website + news platform for the AstralyxPvP server — status page, leaderboards, store, forums hub and AI.</p>
-            <div class="project-meta"><span>own work on the NebulaGames stack</span></div>
+      <div class="project-row featured-row" data-cat="featured personal">
+        <span class="row-index">02</span>
+        <div class="project-info">
+          <div class="project-heading">
+            <span class="tag-featured">featured</span>
+            <h3>☆ Abhinu.Dev Basic ICTL</h3>
           </div>
-          <div class="project-status"><span class="status-mark status-featured">featured</span><span class="updated">now</span></div>
-          <div class="repo-links">
-            <a class="repo-link" href="https://github.com/AstralyxPvP/AstralyxPvP-site" target="_blank" rel="noopener" title="GitHub"><span class="gh">⭘</span><span class="gh-hover">⠿</span></a>
-          </div>
+          <p>A beginner programming language. Interpreter in Python, web editor, interactive shell, turtle graphics &amp; GUI. My favourite build.</p>
+          <div class="project-meta"><span>Python</span><span>interpreter</span><span>vs code ext</span></div>
         </div>
-
-        <div class="project-row featured-row" data-cat="featured personal">
-          <span class="row-index">02</span>
-          <div class="project-info">
-            <div class="project-heading">
-              <span class="featured-label">featured</span>
-              <h3>☆ Abhinu.Dev Basic ICTL</h3>
-            </div>
-            <p>A beginner programming language. Interpreter in Python, web editor, interactive shell, turtle graphics &amp; GUI. My favourite build.</p>
-            <div class="project-meta"><span>Python</span><span>interpreter</span><span>vs code ext</span></div>
-          </div>
-          <div class="project-status"><span class="status-mark status-active">active</span><span class="updated">v1.2</span></div>
-          <div class="repo-links">
-            <a class="repo-link" href="https://github.com/IndianCoder3/Abhinu-Dev_Basic-ICTL" target="_blank" rel="noopener" title="GitHub"><span class="gh">⭘</span><span class="gh-hover">⠿</span></a>
-          </div>
+        <div class="project-status"><span class="status-pill status-active"><span class="sdot"></span> active</span></div>
+        <div class="repo-links">
+          <a class="repo-link" href="https://github.com/IndianCoder3/Abhinu-Dev_Basic-ICTL" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
         </div>
-
-        <div class="project-row" data-cat="astralyx">
-          <span class="row-index">03</span>
-          <div class="project-info">
-            <div class="project-heading"><h3>🤖 AstralyxAI</h3></div>
-            <p>Discord AI assistant powered by Gemini on Cloudflare Workers — live search, leaderboards, server status, per-channel memory.</p>
-            <div class="project-meta"><span>workers</span><span>gemini</span><span>kv</span></div>
-          </div>
-          <div class="project-status"><span class="status-mark status-active">active</span><span class="updated">live</span></div>
-          <div class="repo-links">
-            <a class="repo-link" href="https://github.com/AstralyxPvP/AstralyxAI" target="_blank" rel="noopener" title="GitHub"><span class="gh">⭘</span><span class="gh-hover">⠿</span></a>
-          </div>
-        </div>
-
-        <div class="project-row" data-cat="astralyx">
-          <span class="row-index">04</span>
-          <div class="project-info">
-            <div class="project-heading"><h3>🛡️ DesiBot</h3><span class="owner-label">née Laxmi</span></div>
-            <p>Discord AutoMod for the AstralyxPvP server. Blocks spam, smart punishments, moderation that runs itself.</p>
-            <div class="project-meta"><span>discord</span><span>automod</span><span>~me</span></div>
-          </div>
-          <div class="project-status"><span class="status-mark status-active">active</span><span class="updated">live</span></div>
-          <div class="repo-links">
-            <a class="repo-link" href="https://github.com/AstralyxPvP/Laxmi" target="_blank" rel="noopener" title="GitHub"><span class="gh">⭘</span><span class="gh-hover">⠿</span></a>
-          </div>
-        </div>
-
-        <div class="project-row" data-cat="astralyx">
-          <span class="row-index">05</span>
-          <div class="project-info">
-            <div class="project-heading"><h3>💬 AstralyxForums</h3><span class="owner-label">with DreamLong</span></div>
-            <p>Community forums for AstralyxPvP. I did the GUI restyle and backend boosts, in the spirit of Pika / JartexNetwork.</p>
-            <div class="project-meta"><span>vite</span><span>workers</span><span>UI + backend</span></div>
-          </div>
-          <div class="project-status"><span class="status-mark status-active">active</span><span class="updated">live</span></div>
-          <div class="repo-links">
-            <a class="repo-link" href="https://github.com/AstralyxPvP/AstralyxForums" target="_blank" rel="noopener" title="GitHub"><span class="gh">⭘</span><span class="gh-hover">⠿</span></a>
-          </div>
-        </div>
-
-        <div class="project-row" data-cat="astralyx">
-          <span class="row-index">06</span>
-          <div class="project-info">
-            <div class="project-heading"><h3>📰 AstralyxNews</h3></div>
-            <p>News platform inside the main site so staff can publish updates and articles to the community.</p>
-            <div class="project-meta"><span>news</span><span>cms-lite</span></div>
-          </div>
-          <div class="project-status"><span class="status-mark status-active">active</span><span class="updated">live</span></div>
-          <div class="repo-links">
-            <a class="repo-link" href="https://news.astralyxpvp.int.yt" target="_blank" rel="noopener" title="Open"><span class="gh">↗</span></a>
-          </div>
-        </div>
-
-        <div class="project-row" data-cat="personal">
-          <span class="row-index">07</span>
-          <div class="project-info">
-            <div class="project-heading"><h3>🖥️ AbhinuOS</h3></div>
-            <p>Custom OS kernel in C — PS/2 keyboard, Limine bootloader, basic console. Being succeeded by Andex OS with a full desktop environment.</p>
-            <div class="project-meta"><span>C</span><span>Limine</span><span>OS dev</span></div>
-          </div>
-          <div class="project-status"><span class="status-mark status-upcoming">in dev</span><span class="updated">learning</span></div>
-          <div class="repo-links">
-            <a class="repo-link" href="https://github.com/IndianCoder3/AbhinuOS" target="_blank" rel="noopener" title="GitHub"><span class="gh">⭘</span><span class="gh-hover">⠿</span></a>
-          </div>
-        </div>
-
-        <div class="project-row" data-cat="personal">
-          <span class="row-index">08</span>
-          <div class="project-info">
-            <div class="project-heading"><h3>🌐 abhinu-ide</h3></div>
-            <p>Web-based HTML editor powered by Monaco with full Emmet support.</p>
-            <div class="project-meta"><span>HTML</span><span>monaco</span><span>JS</span></div>
-          </div>
-          <div class="project-status"><span class="status-mark status-active">active</span><span class="updated">latest</span></div>
-          <div class="repo-links">
-            <a class="repo-link" href="https://github.com/IndianCoder3/abhinu-ide" target="_blank" rel="noopener" title="GitHub"><span class="gh">⭘</span><span class="gh-hover">⠿</span></a>
-          </div>
-        </div>
-
-        <div class="project-row" data-cat="personal">
-          <span class="row-index">09</span>
-          <div class="project-info">
-            <div class="project-heading"><h3>📱 QR code generator</h3></div>
-            <p>Quick on-the-go web QR generator built with Streamlit.</p>
-            <div class="project-meta"><span>python</span><span>streamlit</span></div>
-          </div>
-          <div class="project-status"><span class="status-mark status-released">released</span><span class="updated">live</span></div>
-          <div class="repo-links">
-            <a class="repo-link" href="https://github.com/IndianCoder3/Str-QR-Code-Gen_ic3" target="_blank" rel="noopener" title="GitHub"><span class="gh">⭘</span><span class="gh-hover">⠿</span></a>
-          </div>
-        </div>
-
-        <div class="project-row" data-cat="personal">
-          <span class="row-index">10</span>
-          <div class="project-info">
-            <div class="project-heading"><h3>🕐 Basic Time app</h3></div>
-            <p>Windows clock app in .NET — no ads, no clutter, just a big readable clock. My first .NET app.</p>
-            <div class="project-meta"><span>.NET</span><span>C#</span></div>
-          </div>
-          <div class="project-status"><span class="status-mark status-released">released</span><span class="updated">first .net</span></div>
-          <div class="repo-links">
-            <a class="repo-link" href="https://github.com/IndianCoder3/Basic-Time-App_ic3" target="_blank" rel="noopener" title="GitHub"><span class="gh">⭘</span><span class="gh-hover">⠿</span></a>
-          </div>
-        </div>
-
-        <div class="project-row" data-cat="personal">
-          <span class="row-index">11</span>
-          <div class="project-info">
-            <div class="project-heading"><h3>🎮 Tic Tac Toe</h3></div>
-            <p>Classic game in pure HTML/CSS/JS. Simple, clean, actually fun.</p>
-            <div class="project-meta"><span>HTML</span><span>CSS</span><span>JS</span></div>
-          </div>
-          <div class="project-status"><span class="status-mark status-released">released</span><span class="updated">live</span></div>
-          <div class="repo-links">
-            <a class="repo-link" href="https://github.com/IndianCoder3/tictactoe-ic3" target="_blank" rel="noopener" title="GitHub"><span class="gh">⭘</span><span class="gh-hover">⠿</span></a>
-          </div>
-        </div>
-
-        <div class="project-row" data-cat="personal">
-          <span class="row-index">12</span>
-          <div class="project-info">
-            <div class="project-heading"><h3>✨ Particle graphics</h3></div>
-            <p>Built in Visual Basic .NET while bored. Random particles flying around — sometimes you just commit vibes.</p>
-            <div class="project-meta"><span>VB.NET</span></div>
-          </div>
-          <div class="project-status"><span class="status-mark status-released">released</span><span class="updated">vibes</span></div>
-          <div class="repo-links">
-            <a class="repo-link" href="https://github.com/IndianCoder3/Random-Particle-Graphics_ic3" target="_blank" rel="noopener" title="GitHub"><span class="gh">⭘</span><span class="gh-hover">⠿</span></a>
-          </div>
-        </div>
-
-        <div class="project-row" data-cat="personal">
-          <span class="row-index">13</span>
-          <div class="project-info">
-            <div class="project-heading"><h3>🐱 100+ Scratch projects</h3></div>
-            <p>Games, tools, animations, experiments — the endless creative feed where it all started.</p>
-            <div class="project-meta"><span>scratch</span><span>origin</span></div>
-          </div>
-          <div class="project-status"><span class="status-mark status-released">legacy</span><span class="updated">still going</span></div>
-          <div class="repo-links">
-            <a class="repo-link" href="https://scratch.mit.edu/users/IndianCoder3" target="_blank" rel="noopener" title="Profile"><span class="gh">↗</span></a>
-          </div>
-        </div>
-
       </div>
 
-      <p class="source-note">sources · repos under
-        <a href="https://github.com/IndianCoder3" target="_blank" rel="noopener">github.com/IndianCoder3</a> and
-        <a href="https://github.com/AstralyxPvP" target="_blank" rel="noopener">github.com/AstralyxPvP</a>
-      </p>
+      <div class="project-row" data-cat="astralyx">
+        <span class="row-index">03</span>
+        <div class="project-info">
+          <div class="project-heading"><h3>🤖 AstralyxAI</h3></div>
+          <p>Discord AI assistant powered by Gemini on Cloudflare Workers — live search, leaderboards, server status, per-channel memory.</p>
+          <div class="project-meta"><span>workers</span><span>gemini</span><span>kv</span></div>
+        </div>
+        <div class="project-status"><span class="status-pill status-active"><span class="sdot"></span> active</span></div>
+        <div class="repo-links">
+          <a class="repo-link" href="https://github.com/AstralyxPvP/AstralyxAI" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="project-row" data-cat="astralyx">
+        <span class="row-index">04</span>
+        <div class="project-info">
+          <div class="project-heading"><h3>🛡️ DesiBot</h3><span class="tag-collab">née Laxmi</span></div>
+          <p>Discord AutoMod for the AstralyxPvP server. Blocks spam, smart punishments, moderation that runs itself.</p>
+          <div class="project-meta"><span>discord</span><span>automod</span><span>~me</span></div>
+        </div>
+        <div class="project-status"><span class="status-pill status-active"><span class="sdot"></span> active</span></div>
+        <div class="repo-links">
+          <a class="repo-link" href="https://github.com/AstralyxPvP/Laxmi" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="project-row" data-cat="astralyx">
+        <span class="row-index">05</span>
+        <div class="project-info">
+          <div class="project-heading"><h3>💬 AstralyxForums</h3><span class="tag-collab">with DreamLong</span></div>
+          <p>Community forums for AstralyxPvP. I did the GUI restyle and backend boosts, in the spirit of Pika / JartexNetwork.</p>
+          <div class="project-meta"><span>vite</span><span>workers</span><span>UI + backend</span></div>
+        </div>
+        <div class="project-status"><span class="status-pill status-active"><span class="sdot"></span> active</span></div>
+        <div class="repo-links">
+          <a class="repo-link" href="https://github.com/AstralyxPvP/AstralyxForums" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="project-row" data-cat="astralyx">
+        <span class="row-index">06</span>
+        <div class="project-info">
+          <div class="project-heading"><h3>📰 AstralyxNews</h3></div>
+          <p>News platform inside the main site so staff can publish updates and articles to the community.</p>
+          <div class="project-meta"><span>news</span><span>cms-lite</span></div>
+        </div>
+        <div class="project-status"><span class="status-pill status-active"><span class="sdot"></span> active</span></div>
+        <div class="repo-links">
+          <a class="repo-link" href="https://news.astralyxpvp.int.yt" target="_blank" rel="noopener" title="Open"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
+      <div class="project-row" data-cat="personal">
+        <span class="row-index">07</span>
+        <div class="project-info">
+          <div class="project-heading"><h3>🖥️ AbhinuOS</h3></div>
+          <p>Custom OS kernel in C — PS/2 keyboard, Limine bootloader, basic console. Being succeeded by Andex OS with a full desktop environment.</p>
+          <div class="project-meta"><span>C</span><span>Limine</span><span>OS dev</span></div>
+        </div>
+        <div class="project-status"><span class="status-pill status-upcoming"><span class="sdot"></span> in dev</span></div>
+        <div class="repo-links">
+          <a class="repo-link" href="https://github.com/IndianCoder3/AbhinuOS" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="project-row" data-cat="personal">
+        <span class="row-index">08</span>
+        <div class="project-info">
+          <div class="project-heading"><h3>🌐 abhinu-ide</h3></div>
+          <p>Web-based HTML editor powered by Monaco with full Emmet support.</p>
+          <div class="project-meta"><span>HTML</span><span>monaco</span><span>JS</span></div>
+        </div>
+        <div class="project-status"><span class="status-pill status-active"><span class="sdot"></span> active</span></div>
+        <div class="repo-links">
+          <a class="repo-link" href="https://github.com/IndianCoder3/abhinu-ide" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="project-row" data-cat="personal">
+        <span class="row-index">09</span>
+        <div class="project-info">
+          <div class="project-heading"><h3>📱 QR code generator</h3></div>
+          <p>Quick on-the-go web QR generator built with Streamlit.</p>
+          <div class="project-meta"><span>python</span><span>streamlit</span></div>
+        </div>
+        <div class="project-status"><span class="status-pill status-released"><span class="sdot"></span> released</span></div>
+        <div class="repo-links">
+          <a class="repo-link" href="https://github.com/IndianCoder3/Str-QR-Code-Gen_ic3" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="project-row" data-cat="personal">
+        <span class="row-index">10</span>
+        <div class="project-info">
+          <div class="project-heading"><h3>🕐 Basic Time app</h3></div>
+          <p>Windows clock app in .NET — no ads, no clutter, just a big readable clock. My first .NET app.</p>
+          <div class="project-meta"><span>.NET</span><span>C#</span></div>
+        </div>
+        <div class="project-status"><span class="status-pill status-released"><span class="sdot"></span> released</span></div>
+        <div class="repo-links">
+          <a class="repo-link" href="https://github.com/IndianCoder3/Basic-Time-App_ic3" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="project-row" data-cat="personal">
+        <span class="row-index">11</span>
+        <div class="project-info">
+          <div class="project-heading"><h3>🎮 Tic Tac Toe</h3></div>
+          <p>Classic game in pure HTML/CSS/JS. Simple, clean, actually fun.</p>
+          <div class="project-meta"><span>HTML</span><span>CSS</span><span>JS</span></div>
+        </div>
+        <div class="project-status"><span class="status-pill status-released"><span class="sdot"></span> released</span></div>
+        <div class="repo-links">
+          <a class="repo-link" href="https://github.com/IndianCoder3/tictactoe-ic3" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="project-row" data-cat="personal">
+        <span class="row-index">12</span>
+        <div class="project-info">
+          <div class="project-heading"><h3>✨ Particle graphics</h3></div>
+          <p>Built in Visual Basic .NET while bored. Random particles flying around — sometimes you just commit vibes.</p>
+          <div class="project-meta"><span>VB.NET</span></div>
+        </div>
+        <div class="project-status"><span class="status-pill status-released"><span class="sdot"></span> released</span></div>
+        <div class="repo-links">
+          <a class="repo-link" href="https://github.com/IndianCoder3/Random-Particle-Graphics_ic3" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="project-row" data-cat="personal">
+        <span class="row-index">13</span>
+        <div class="project-info">
+          <div class="project-heading"><h3>🐱 100+ Scratch projects</h3></div>
+          <p>Games, tools, animations, experiments — the endless creative feed where it all started.</p>
+          <div class="project-meta"><span>scratch</span><span>origin</span></div>
+        </div>
+        <div class="project-status"><span class="status-pill status-released"><span class="sdot"></span> legacy</span></div>
+        <div class="repo-links">
+          <a class="repo-link" href="https://scratch.mit.edu/users/IndianCoder3" target="_blank" rel="noopener" title="Profile"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+
     </div>
+
+    <p class="source-note">sources · repos under
+      <a href="https://github.com/IndianCoder3" target="_blank" rel="noopener">github.com/IndianCoder3</a> and
+      <a href="https://github.com/AstralyxPvP" target="_blank" rel="noopener">github.com/AstralyxPvP</a>
+    </p>
   </section>
 
   <!-- ══════════ ABOUT ══════════ -->
-  <section class="about-section" id="about">
+  <section class="block block-alt" id="about">
+    <div class="block-head">
+      <p class="kicker">§ 04 · about</p>
+      <h2 class="block-title"><em>About</em> me</h2>
+      <p class="block-sub">The short version, and my ever-incomplete skill bar.</p>
+    </div>
+
     <div class="about-grid">
-      <div>
-        <p class="section-kicker">§ field notes</p>
-        <h2>About <em>me</em></h2>
-      </div>
       <div class="about-copy">
         <p>
           Hey, I'm <b>Abhinu</b> — known online as <b>@IndianCoder3</b>. I'm a student from India who
@@ -468,35 +445,37 @@
           <span>🖥️ Arch Linux · KDE Plasma</span>
           <span>⚙️ Lenovo i5-4570s · 8GB</span>
         </p>
+      </div>
 
-        <div class="skills-block reveal">
-          <div class="skills-head">// Skill XP</div>
-          <div class="xp-row">
-            <div class="xp-top"><span class="xp-name">Scratch</span><span class="xp-amt">80%</span></div>
-            <div class="xp-bar"><div class="xp-fill" style="width:80%"></div></div>
-          </div>
-          <div class="xp-row">
-            <div class="xp-top"><span class="xp-name">Python</span><span class="xp-amt">50%</span></div>
-            <div class="xp-bar"><div class="xp-fill" style="width:50%"></div></div>
-          </div>
-          <div class="xp-row">
-            <div class="xp-top"><span class="xp-name">HTML / CSS / JavaScript</span><span class="xp-amt">50%</span></div>
-            <div class="xp-bar"><div class="xp-fill" style="width:50%"></div></div>
-          </div>
-          <div class="xp-row">
-            <div class="xp-top"><span class="xp-name">C / Kernel Dev</span><span class="xp-amt">10% · still grinding</span></div>
-            <div class="xp-bar"><div class="xp-fill" style="width:10%"></div></div>
-          </div>
+      <div class="skills-block reveal">
+        <div class="skills-head">// Skill XP</div>
+        <div class="xp-row">
+          <div class="xp-top"><span class="xp-name">Scratch</span><span class="xp-amt">80%</span></div>
+          <div class="xp-track"><div class="xp-fill notched" style="width:80%"></div></div>
+        </div>
+        <div class="xp-row">
+          <div class="xp-top"><span class="xp-name">Python</span><span class="xp-amt">50%</span></div>
+          <div class="xp-track"><div class="xp-fill notched" style="width:50%"></div></div>
+        </div>
+        <div class="xp-row">
+          <div class="xp-top"><span class="xp-name">HTML / CSS / JavaScript</span><span class="xp-amt">50%</span></div>
+          <div class="xp-track"><div class="xp-fill notched" style="width:50%"></div></div>
+        </div>
+        <div class="xp-row">
+          <div class="xp-top"><span class="xp-name">C / Kernel Dev</span><span class="xp-amt">10% · still grinding</span></div>
+          <div class="xp-track"><div class="xp-fill notched" style="width:10%"></div></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ══════════ LINKS ══════════ -->
-  <section class="links-section" id="links">
-    <p class="section-kicker">§ verified links</p>
-    <h2>Find me <em>around</em></h2>
-    <p class="links-note-intro">I'm most active on GitHub and YouTube.</p>
+  <section class="block" id="links">
+    <div class="block-head">
+      <p class="kicker">§ 05 · find me</p>
+      <h2 class="block-title">Around the <em>web</em></h2>
+      <p class="block-sub">I'm most active on GitHub and YouTube.</p>
+    </div>
 
     <div class="links-grid">
       <a class="big-link" href="https://github.com/IndianCoder3" target="_blank" rel="noopener">
@@ -529,9 +508,8 @@
 
   <!-- ══════════ FOOTER ══════════ -->
   <footer>
-    <span class="wordmark">IndianCoder<i>3</i></span>
-    <a href="#top">back to top ↑</a>
-    <span>© 2026 Abhinu · code, create, repeat</span>
+    <div class="foot-mark"><img src="images/logo.png" alt="logo" /> IndianCoder<i>3</i></div>
+    <p>© 2026 Abhinu · code, create, repeat · <a href="#top">back to top ↑</a></p>
   </footer>
 
   <script src="js/main.js"></script>

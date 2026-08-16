@@ -150,7 +150,7 @@
         if (entry.isIntersecting) {
           var id = entry.target.id;
           navAnchors.forEach(function (a) {
-            if (a.getAttribute('href') === '#' + id) a.style.color = 'var(--rust)';
+            if (a.getAttribute('href') === '#' + id) a.style.color = 'var(--gold)';
             else a.style.color = '';
           });
         }
