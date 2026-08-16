@@ -1,157 +1,161 @@
-/* ============================================================
-   @IndianCoder3 — Portfolio JS
-   ============================================================ */
+/* ══════════════════════════════════════════════════════════
+   AbhinuDev — site interactions
+   ══════════════════════════════════════════════════════════ */
 
-// ── Page routing ─────────────────────────────────────────────
-function showPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  const page = document.getElementById('page-' + id);
-  if (page) { page.classList.add('active'); }
-  window.scrollTo({ top: 0, behavior: 'instant' });
+(function () {
+  'use strict';
 
-  // Highlight active nav link
-  document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
-    a.classList.toggle('active', a.dataset.page === id);
+  /* ── Mobile nav ────────────────────────────────────────── */
+  var menuBtn = document.getElementById('menu-button');
+  var navLinks = document.getElementById('nav-links');
+
+  menuBtn.addEventListener('click', function () {
+    navLinks.classList.toggle('nav-open');
   });
 
-  // Close mobile nav
-  navLinks.classList.remove('open');
-  burger.classList.remove('open');
-
-  // Trigger reveals on the newly visible page
-  setTimeout(checkReveals, 80);
-}
-
-// ── Custom Cursor ────────────────────────────────────────────
-const dot = document.querySelector('.cursor-dot');
-const outline = document.querySelector('.cursor-outline');
-
-let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
-let outlineX = window.innerWidth / 2, outlineY = window.innerHeight / 2;
-
-document.addEventListener('mousemove', e => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
-
-function animateCursor() {
-  if (!dot || !outline) return;
-  
-  // Update dot position directly
-  dot.style.left = `${mouseX}px`;
-  dot.style.top = `${mouseY}px`;
-  
-  // Smoothly interpolate outline position
-  outlineX += (mouseX - outlineX) * 0.2;
-  outlineY += (mouseY - outlineY) * 0.2;
-  
-  outline.style.left = `${outlineX}px`;
-  outline.style.top = `${outlineY}px`;
-  
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
-// Cursor hover effect on interactive elements
-document.querySelectorAll('a, button, .feature-card, .pc-inner').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    outline.style.width = '50px';
-    outline.style.height = '50px';
+  navLinks.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      navLinks.classList.remove('nav-open');
+    });
   });
-  el.addEventListener('mouseleave', () => {
-    outline.style.width = '30px';
-    outline.style.height = '30px';
-  });
-});
 
-
-// ── Navbar scroll glass ───────────────────────────────────────
-const navbar   = document.getElementById('navbar');
-const navLinks = document.getElementById('nav-links');
-const burger   = document.getElementById('burger');
-
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
-
-burger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  burger.classList.toggle('open');
-});
-
-// Close nav if clicking outside on mobile
-document.addEventListener('click', e => {
-  if (!navbar.contains(e.target)) {
-    navLinks.classList.remove('open');
-    burger.classList.remove('open');
-  }
-});
-
-// Prevent default on all nav <a> tags
-document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
-  a.addEventListener('click', e => e.preventDefault());
-});
-
-// ── Typewriter ───────────────────────────────────────────────
-const LINES = [
-  'Architect of AbhinuOS and Basic ICTL',
-  'A Cool Indian Coder \u{1F1EE}\u{1F1F3}',
-  'App Crafter',
-  'Jai Shree Krishna',
-  'You are right! They don\'t like me, they love me',
-  'Building the future, one line at a time',
-  'Debugging life, one coffee at a time',
-  'Innovating the web, OS, and everything in between'
-];
-
-const RARE_LINES = ['The one who never quits MineCraft'];
-
-let li = 0, ci = 0, deleting = false, showingRare = false, rareLine = '';
-const tyEl = document.getElementById('typed-text');
-
-function tick() {
-  if (!tyEl) return;
-  
-  let line = showingRare ? rareLine : LINES[li];
-  
-  if (!deleting) {
-    tyEl.textContent = line.slice(0, ci + 1);
-    ci++;
-    if (ci === line.length) {
-      deleting = true;
-      return setTimeout(tick, 1800);
+  document.addEventListener('click', function (e) {
+    if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+      navLinks.classList.remove('nav-open');
     }
-    setTimeout(tick, 54);
-  } else {
-    tyEl.textContent = line.slice(0, ci - 1);
-    ci--;
-    if (ci === 0) {
-      deleting = false;
-      showingRare = false;
-      
-      // 10% chance to show a rare line
-      if (Math.random() < 0.1) {
-        showingRare = true;
-        rareLine = RARE_LINES[Math.floor(Math.random() * RARE_LINES.length)];
-      } else {
-        li = (li + 1) % LINES.length;
+  });
+
+  /* ── Hero typewriter ───────────────────────────────────── */
+  var LINES = [
+    'Builder of the Basic ICTL language, keeper of the AstralyxPvP stack, and a very stubborn OS learner.',
+    'I turn ideas into sites, bots and interpreters.',
+    'From bare-metal kernels in C to beginner-friendly coding languages.',
+    'The one who never quits Minecraft (or debugging).'
+  ];
+
+  var typedEl = document.getElementById('typed');
+  var li = 0, ci = 0, deleting = false;
+
+  function tick() {
+    if (!typedEl) return;
+    var line = LINES[li];
+
+    if (!deleting) {
+      typedEl.textContent = line.slice(0, ci + 1);
+      ci++;
+      if (ci === line.length) {
+        deleting = true;
+        return window.setTimeout(tick, 2400);
       }
-      return setTimeout(tick, 380);
+      window.setTimeout(tick, 34);
+    } else {
+      typedEl.textContent = line.slice(0, ci - 1);
+      ci--;
+      if (ci === 0) {
+        deleting = false;
+        li = (li + 1) % LINES.length;
+        return window.setTimeout(tick, 450);
+      }
+      window.setTimeout(tick, 18);
     }
-    setTimeout(tick, 28);
   }
-}
-setTimeout(tick, 700);
 
-// ── Scroll reveal ─────────────────────────────────────────────
-function checkReveals() {
-  const vh = window.innerHeight;
-  document.querySelectorAll('.reveal:not(.visible)').forEach((el, i) => {
-    const top = el.getBoundingClientRect().top;
-    if (top < vh - 30) {
-      setTimeout(() => el.classList.add('visible'), i * 55);
-    }
+  if (typedEl) {
+    window.setTimeout(tick, 650);
+  }
+
+  /* ── Scroll reveal ─────────────────────────────────────── */
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  /* ── Project filter tabs ───────────────────────────────── */
+  var tabs = document.querySelectorAll('#filter-tabs button');
+  var rows = document.querySelectorAll('.project-row');
+  var counts = {
+    all: rows.length,
+    featured: 0,
+    astralyx: 0,
+    personal: 0
+  };
+
+  rows.forEach(function (row) {
+    var cats = row.getAttribute('data-cat').split(/\s+/);
+    if (cats.indexOf('featured') !== -1) counts.featured++;
+    if (cats.indexOf('astralyx') !== -1) counts.astralyx++;
+    if (cats.indexOf('personal') !== -1) counts.personal++;
   });
-}
-window.addEventListener('scroll', checkReveals, { passive: true });
-setTimeout(checkReveals, 200);
+
+  document.getElementById('count-all').textContent = counts.all;
+  document.getElementById('count-featured').textContent = counts.featured;
+  document.getElementById('count-astralyx').textContent = counts.astralyx;
+  document.getElementById('count-personal').textContent = counts.personal;
+
+  tabs.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabs.forEach(function (b) { b.classList.remove('filter-active'); });
+      btn.classList.add('filter-active');
+
+      var filter = btn.getAttribute('data-filter');
+      rows.forEach(function (row) {
+        var cats = row.getAttribute('data-cat').split(/\s+/);
+        var show = filter === 'all' || cats.indexOf(filter) !== -1;
+        row.style.display = show ? '' : 'none';
+      });
+    });
+  });
+
+  /* ── Copy server IP ────────────────────────────────────── */
+  var ipEl = document.getElementById('java-ip');
+  if (ipEl) {
+    ipEl.addEventListener('click', function () {
+      var ip = 'java.astralyxpvp.int.yt';
+      var done = function () {
+        var original = ipEl.textContent;
+        ipEl.textContent = 'copied!';
+        window.setTimeout(function () { ipEl.textContent = original; }, 1400);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(ip).then(done, done);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = ip;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        done();
+      }
+    });
+  }
+
+  /* ── Scrollspy (nav active section) ────────────────────── */
+  var sections = document.querySelectorAll('section[id]');
+  var navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          navAnchors.forEach(function (a) {
+            if (a.getAttribute('href') === '#' + id) a.style.color = 'var(--rust)';
+            else a.style.color = '';
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(function (s) { spy.observe(s); });
+  }
+})();
